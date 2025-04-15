@@ -4,6 +4,8 @@ import App from './App.tsx';
 import './index.css';
 import { Toaster } from 'react-hot-toast';
 
+document.documentElement.classList.add('dark');
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
