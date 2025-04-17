@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-surface text-subtext text-center py-4 text-sm">
-      © {year} Rory Eddleston. All rights reserved.
+      <span className="text-accent">©</span> {year} Rory Eddleston. All rights reserved.
     </footer>
   );
 };
