@@ -56,7 +56,7 @@ const Contact = () => {
               type="text"
               {...register('name', { required: 'Name is required' })}
               placeholder="Your full name"
-              className="w-full px-4 py-3 rounded-xl bg-bg border border-border text-text placeholder-subtext focus:outline-none focus:ring-2 focus:ring-accent"
+              className="w-full px-4 py-3 rounded-xl bg-bg border border-border text-text placeholder:text-subtext focus:outline-none focus:ring-2 focus:ring-accent"
             />
             {errors.name && <p className="text-sm text-error">{errors.name.message}</p>}
           </div>
@@ -73,7 +73,7 @@ const Contact = () => {
                 },
               })}
               placeholder="you@example.com"
-              className="w-full px-4 py-3 rounded-xl bg-bg border border-border text-text placeholder-subtext focus:outline-none focus:ring-2 focus:ring-accent"
+              className="w-full px-4 py-3 rounded-xl bg-bg border border-border text-text placeholder:text-subtext focus:outline-none focus:ring-2 focus:ring-accent"
             />
             {errors.email && <p className="text-sm text-error">{errors.email.message}</p>}
           </div>
@@ -84,7 +84,7 @@ const Contact = () => {
               rows={6}
               {...register('message', { required: 'Message is required' })}
               placeholder="What's on your mind?"
-              className="w-full px-4 py-3 rounded-xl bg-bg border border-border text-text placeholder-subtext focus:outline-none focus:ring-2 focus:ring-accent resize-none"
+              className="w-full px-4 py-3 rounded-xl bg-bg border border-border text-text placeholder:text-subtext focus:outline-none focus:ring-2 focus:ring-accent resize-none"
             />
             {errors.message && <p className="text-sm text-error">{errors.message.message}</p>}
           </div>
@@ -93,10 +93,10 @@ const Contact = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full py-3 px-6 rounded-xl font-semibold text-white text-lg transition-colors duration-300 ${
+              className={`w-full py-3 px-6 rounded-xl font-semibold text-lg transition-all duration-300 border-2 ${
                 isSubmitting
-                  ? 'bg-border cursor-not-allowed'
-                  : 'bg-accent hover:bg-accent-hover focus:ring-2 focus:ring-accent-hover'
+                  ? 'border-border text-border cursor-not-allowed bg-transparent'
+                  : 'border-accent text-accent hover:bg-accent hover:text-white focus:ring-2 focus:ring-accent-hover'
               }`}
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}

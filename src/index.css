@@ -59,6 +59,16 @@
   a:hover {
     color: var(--accent-hover);
   }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--subtext);
+    opacity: 1;
+  }
+
+  button:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
 @layer utilities {
