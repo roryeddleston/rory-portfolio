@@ -4,7 +4,7 @@ import '../index.css';
 
 const Navbar = () => {
   return (
-    <nav className="bg-theme text-theme shadow px-4 py-3 transition-colors duration-300">
+    <nav className="text-theme shadow px-4 py-3 transition-colors duration-300">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <span className="text-xl font-semibold">Rory's Portfolio</span>
 
