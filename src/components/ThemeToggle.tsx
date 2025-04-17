@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-import "../index.css";
-
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
@@ -15,7 +13,7 @@ const ThemeToggle = () => {
   });
 
   useEffect(() => {
-    const root = window.document.documentElement;
+    const root = document.documentElement;
 
     if (theme === 'dark') {
       root.classList.add('dark');
@@ -29,7 +27,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="px-4 py-2 rounded-lg border text-sm font-medium shadow-sm bg-gray-100 dark:bg-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 transition"
+      className="px-4 py-2 rounded-lg text-sm font-medium shadow-sm cursor-pointer transition-colors bg-surface text-text border border-border hover:bg-accent"
     >
       {theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode'}
     </button>

@@ -1,33 +1,21 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
-import "../index.css";
+import '../index.css';
 
 const Navbar = () => {
   return (
-    <nav className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 shadow px-4 py-3 transition-colors duration-300">
+    <nav className="bg-theme text-theme shadow px-4 py-3 transition-colors duration-300">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <span className="text-xl font-semibold">
-          Rory's Portfolio
-        </span>
+        <span className="text-xl font-semibold">Rory's Portfolio</span>
 
         <div className="flex items-center gap-6">
-          <Link
-            to="/"
-            className="transition-colors text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
-          >
+          <Link to="/" className="text-theme hover-accent transition">
             Home
           </Link>
-          <Link
-            to="/projects"
-            className="transition-colors text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
-          >
+          <Link to="/projects" className="text-theme hover-accent transition">
             Projects
           </Link>
-          <Link
-            to="/contact"
-            className="transition-colors text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
-          >
+          <Link to="/contact" className="text-theme hover-accent transition">
             Contact
           </Link>
           <ThemeToggle />

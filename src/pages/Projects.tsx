@@ -1,5 +1,4 @@
 import ProjectCard from '../components/ProjectCard';
-import "../index.css";
 
 const projects = [
   {
@@ -21,15 +20,14 @@ const projects = [
     title: 'Portfolio Website',
     description: 'A personal portfolio built with React, Tailwind CSS, and Vite.',
     link: 'https://github.com/roryeddleston/rory-portfolio',
-  }
+  },
 ];
 
 const Projects = () => {
   return (
-    <section className="min-h-screen px-4 py-8 bg-gray-50 dark:bg-gray-900">
-      <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-10">
-        Projects
-      </h2>
+    <section className="min-h-screen px-4 py-16 bg-bg text-text transition-colors duration-300">
+      <h2 className="text-4xl font-bold text-center text-heading mb-12">Projects</h2>
+
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
