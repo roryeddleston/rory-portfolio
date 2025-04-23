@@ -17,7 +17,7 @@ import '../index.css';
 const floatingIcons = [
   { icon: <SiReact />, top: '10%', left: '15%' },
   { icon: <SiTypescript />, top: '25%', left: '80%' },
-  { icon: <SiPostgresql />, top: '60%', left: '5%' },
+  { icon: <SiPostgresql />, top: '60%', left: '10%' },
   { icon: <SiCss3 />, top: '70%', left: '70%' },
   { icon: <SiSass />, top: '15%', left: '60%' },
   { icon: <FaMobileAlt />, top: '80%', left: '25%' },
@@ -31,7 +31,7 @@ const timeline = [
   {
     year: '2019',
     title: 'Started learning to code',
-    description: 'Taught myself HTML, CSS and JavaScript while working full-time.',
+    description: 'Taught myself HTML, CSS and JavaScript while working full-time as a data analyst.',
     icon: <FaCode />,
   },
   {
@@ -56,7 +56,7 @@ const timeline = [
 
 const Home = () => {
   const [text, setText] = useState('');
-  const fullText = "Hey, I’m Rory, a frontend developer";
+  const fullText = "Hey, I’m Rory";
 
   useEffect(() => {
     let i = 0;
@@ -64,14 +64,13 @@ const Home = () => {
       setText(fullText.slice(0, i + 1));
       i++;
       if (i === fullText.length) clearInterval(interval);
-    }, 75);
+    }, 90);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <>
-      {/* HERO SECTION */}
-      <section className="relative min-h-screen bg-gradient-theme text-theme transition-colors duration-300 flex items-center justify-center overflow-hidden">
+      <section className="left-10 relative min-h-screen bg-gradient-theme text-theme transition-colors duration-300 flex items-center justify-center overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
           {floatingIcons.map((item, idx) => {
             const floatDistance = Math.floor(Math.random() * 40) + 20;
