@@ -1,6 +1,7 @@
 import emailjs from '@emailjs/browser';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
+import { motion } from 'framer-motion';
 
 interface FormInputs {
   name: string;
@@ -43,13 +44,36 @@ const Contact = () => {
 
   return (
     <section className="min-h-screen w-full px-6 pt-28 pb-16 bg-bg text-text flex justify-center lg:pl-20 lg:pt-16">
-      <div className="max-w-xl bg-surface shadow-2xl rounded-3xl px-10 py-14 md:px-16 space-y-12 transition-all duration-300 border-2 [border-color:var(--accent)]">
-        <h1 className="text-5xl md:text-6xl font-bold text-center text-heading">Let's talk</h1>
-        <p className="text-center text-subtext max-w-md mx-auto">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95, y: 30 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="max-w-xl bg-surface rounded-3xl px-10 py-14 md:px-16 space-y-12 transition-all duration-300 border-2 [border-color:var(--accent)]"
+      >
+        <motion.h1
+          className="text-5xl md:text-6xl font-bold text-center text-heading"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+        >
+          Let's talk
+        </motion.h1>
+        <motion.p
+          className="text-center text-subtext max-w-md mx-auto"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+        >
           Feel free to reach out using the form below — whether it's about work, collaboration, or just to say hi.
-        </p>
+        </motion.p>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+        <motion.form
+          onSubmit={handleSubmit(onSubmit)}
+          className="space-y-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+        >
           <div className="space-y-2">
             <label className="block text-sm font-semibold">Name</label>
             <input
@@ -90,9 +114,11 @@ const Contact = () => {
           </div>
 
           <div className="pt-2">
-            <button
+            <motion.button
               type="submit"
               disabled={isSubmitting}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               className={`w-full py-3 px-6 rounded-xl font-semibold text-lg transition-all duration-300 border-2 ${
                 isSubmitting
                   ? 'border-border text-border cursor-not-allowed bg-transparent'
@@ -100,10 +126,10 @@ const Contact = () => {
               }`}
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
-            </button>
+            </motion.button>
           </div>
-        </form>
-      </div>
+        </motion.form>
+      </motion.div>
     </section>
   );
 };
