@@ -31,7 +31,7 @@ const ThemeToggle = () => {
       className="relative w-16 h-8 flex items-center rounded-full p-1 transition-all duration-300 border-2 border-accent"
     >
       <div
-        className={`w-6 h-6 rounded-full bg-transparent flex items-center justify-center text-sm transition-transform duration-300 transform ${
+        className={`w-5 h-6 rounded-full bg-transparent flex items-center justify-center text-sm transition-transform duration-300 transform ${
           theme === 'dark' ? 'translate-x-8' : ''
         }`}
       >
