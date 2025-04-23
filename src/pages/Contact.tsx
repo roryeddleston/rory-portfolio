@@ -42,8 +42,8 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen px-6 py-16 bg-bg text-text flex justify-center">
-      <div className="max-w-xl bg-surface shadow-2xl rounded-3xl px-10 py-14 md:px-16 space-y-12 transition-all duration-300">
+    <section className="min-h-screen w-full px-6 pt-28 pb-16 bg-bg text-text flex justify-center lg:pl-20 lg:pt-16">
+      <div className="max-w-xl bg-surface shadow-2xl rounded-3xl px-10 py-14 md:px-16 space-y-12 transition-all duration-300 border-2 [border-color:var(--accent)]">
         <h1 className="text-5xl md:text-6xl font-bold text-center text-heading">Let's talk</h1>
         <p className="text-center text-subtext max-w-md mx-auto">
           Feel free to reach out using the form below — whether it's about work, collaboration, or just to say hi.

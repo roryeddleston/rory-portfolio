@@ -25,7 +25,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="min-h-screen px-4 py-16 bg-bg text-text transition-colors duration-300">
+    <section className="min-h-screen px-4 py-16 bg-bg text-text transition-colors duration-300 pl-20"> {/* ← Added pl-20 */}
       <h2 className="text-4xl font-bold text-center text-heading mb-12">Projects</h2>
 
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
