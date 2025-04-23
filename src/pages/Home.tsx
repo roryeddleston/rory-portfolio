@@ -70,7 +70,8 @@ const Home = () => {
 
   return (
     <>
-      <section className="left-10 relative min-h-screen bg-gradient-theme text-theme transition-colors duration-300 flex items-center justify-center overflow-hidden">
+      {/* HERO SECTION */}
+      <section className="relative min-h-screen md:pl-20 bg-gradient-theme text-theme transition-colors duration-300 flex items-center justify-center overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
           {floatingIcons.map((item, idx) => {
             const floatDistance = Math.floor(Math.random() * 40) + 20;
@@ -91,29 +92,48 @@ const Home = () => {
           })}
         </div>
 
-        <div className="relative z-10 max-w-3xl px-6 text-center">
-          <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-heading mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            {text}
-            {text !== fullText && <span className="blinking-cursor">|</span> }
-          </motion.h1>
+        <div className="relative z-10 max-w-4xl px-6 w-full">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-10">
+            {/* Image */}
+            <motion.img
+              src="/images/profile.jpg"
+              alt="Rory"
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                delay: 1,
+                duration: 1,
+                ease: 'easeOut',
+              }}
+              className="w-36 h-36 rounded-full border-[4px] border-accent text-accent shadow-lg object-cover"
+            />
 
-          <motion.p
-            className="text-subtext text-lg sm:text-xl"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-          >
-            Scroll down to explore my projects and skills.
-          </motion.p>
+            {/* Text */}
+            <div className="text-center md:text-left max-w-lg">
+              <motion.h1
+                className="text-4xl sm:text-5xl md:text-6xl font-bold text-heading mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                {text}
+                {text !== fullText && <span className="blinking-cursor">|</span>}
+              </motion.h1>
+
+              <motion.p
+                className="text-subtext text-lg sm:text-xl"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+              >
+                I'm a frontend developer with a passion for clean UI, smooth UX, and making the web a more beautiful place.
+              </motion.p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ABOUT ME */}
+      {/* ABOUT ME SECTION */}
       <section className="bg-surface text-theme px-6 py-20 transition-colors duration-300">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <motion.h2
@@ -140,6 +160,7 @@ const Home = () => {
         </div>
       </section>
 
+      {/* JOURNEY TIMELINE */}
       <section className="bg-bg text-theme px-6 py-20 transition-colors duration-300">
         <div className="max-w-4xl mx-auto">
           <motion.h2
@@ -162,7 +183,7 @@ const Home = () => {
                 transition={{ delay: idx * 0.2, duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <div className="absolute -left-13 top-0 w-14 h-14 bg-surface border border-border rounded-full flex items-center justify-center text-accent shadow">
+                <div className="absolute -left-13 top-0 w-14 h-14 bg-surface border border-border rounded-full flex items-center justify-center text-accent shadow text-xl">
                   {item.icon}
                 </div>
 
