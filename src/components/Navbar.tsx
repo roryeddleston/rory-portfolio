@@ -27,9 +27,8 @@ const Navbar = () => {
     <>
       {/* Sidebar for desktop */}
       <aside className="hidden md:flex fixed top-0 left-0 h-full w-20 bg-surface border-r border-border flex-col items-center pt-6 z-50 transition-colors space-y-6">
-        <div className="text-accent font-bold text-lg">R</div>
 
-        <nav className="flex flex-col items-center space-y-6 mt-4">
+        <nav className="flex flex-col items-center space-y-8 mt-6">
           {navLinks.map((link) => (
             <Link
               key={link.to}
