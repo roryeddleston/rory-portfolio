@@ -12,7 +12,7 @@ const ProjectCard = ({ title, description, link }: ProjectProps) => {
     <motion.div
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.97 }}
-      className="bg-surface text-text rounded-2xl shadow-md p-6 hover:shadow-lg transition-all border border-border"
+      className="text-text rounded-2xl p-6 hover:shadow-lg transition-all"
     >
       <h3 className="text-xl font-semibold mb-2 text-heading">{title}</h3>
       <p className="text-subtext mb-4">{description}</p>
