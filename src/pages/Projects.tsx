@@ -48,16 +48,16 @@ const projects = [
 const Projects = () => {
   return (
     <section className="min-h-screen px-4 py-16 bg-bg text-text transition-colors duration-300">
-      <h2 className="text-5xl font-bold text-center text-heading mb-12">Projects</h2>
+      <h2 className="text-5xl font-bold text-center text-heading">Projects</h2>
 
-      <div className="space-y-28 max-w-6xl mx-auto">
+      <div className="lg:space-y-10 max-w-6xl mx-auto mt-10">
         {projects.map((project, index) => (
           <div
             key={index}
             className="relative flex flex-col-reverse lg:flex-row gap-10 p-6 overflow-hidden rounded-2xl"
           >
             {/* Image Section */}
-            <div className="relative w-full lg:w-1/2 flex items-center justify-center">
+            <div className="relative w-9/10 lg:w-1/2 flex items-center justify-center">
               {project.title === 'CoDriver mobile app' ? (
                 <motion.img
                   src={project.mobileImg}
@@ -98,7 +98,7 @@ const Projects = () => {
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
               viewport={{ once: true }}
-              className="flex-1 space-y-4 mt-10 lg:mt-20 lg:ml-20"
+              className="flex-1 space-y-4 lg:mt-20 lg:ml-20"
             >
               <h3 className="text-3xl font-bold text-accent">{project.title}</h3>
               <p className="text-subtext mb-7">{project.description}</p>
