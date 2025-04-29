@@ -64,7 +64,7 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          Feel free to reach out using the form below — whether it's about work, collaboration, or just to say hi.
+          I'm currently looking for new opportunities. If you have a project in mind or just want to chat, feel free to reach out!
         </motion.p>
 
         <motion.form
@@ -107,7 +107,7 @@ const Contact = () => {
             <textarea
               rows={6}
               {...register('message', { required: 'Message is required' })}
-              placeholder="What's on your mind?"
+              placeholder="Write your message here..."
               className="w-full px-4 py-3 rounded-xl bg-bg border border-border text-text placeholder:text-subtext focus:outline-none focus:ring-2 focus:ring-accent resize-none"
             />
             {errors.message && <p className="text-sm text-error">{errors.message.message}</p>}

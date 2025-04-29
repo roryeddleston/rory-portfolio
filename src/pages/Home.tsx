@@ -35,21 +35,21 @@ const timeline = [
     icon: <FaCode />,
   },
   {
-    year: '2020',
-    title: 'Built my first full app',
-    description: 'Launched a React project with Firebase and deployed it on Netlify.',
+    year: '2021',
+    title: 'Junior developer role',
+    description: 'Became a junior developer at a creative agency, working on a wide variety of projects.',
     icon: <FaRocket />,
   },
   {
     year: '2022',
-    title: 'Worked on freelance projects',
-    description: 'Delivered custom websites for clients using modern tech stacks.',
+    title: 'Mid level developer role',
+    description: 'Promoted to mid-level developer, taking on more complex projects and responsibilities.',
     icon: <FaBriefcase />,
   },
   {
-    year: '2024',
-    title: 'Pushed into performance + design',
-    description: 'Focused on accessibility, animations, and fine-tuned user experiences.',
+    year: '2025',
+    title: 'Left to travel, focus on fundamentals and the latest tools',
+    description: 'Built a website for a local charity, worked on personal projects and taught myself TypeScript.',
     icon: <FaLaptopCode />,
   },
 ];
@@ -71,7 +71,7 @@ const Home = () => {
   return (
     <>
       {/* HERO SECTION */}
-      <section className="relative min-h-screen md:pl-20 bg-gradient-theme text-theme transition-colors duration-300 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen md:pl-20 bg-gradient-theme text-surface dark:text-theme transition-colors duration-300 flex items-center justify-center overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
           {floatingIcons.map((item, idx) => {
             const floatDistance = Math.floor(Math.random() * 40) + 20;
@@ -126,15 +126,27 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
               >
-                I'm a frontend developer with a passion for clean UI, smooth UX, and making the web a more beautiful place.
+                I’m a frontend developer who thrives on solving real-world problems with code. I love collaborating to build fast, perfomant websites and apps.
               </motion.p>
+
+              <motion.a
+                href="/projects"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.3, duration: 0.1, ease: 'easeOut' }}
+                className="inline-block mt-6 text-lg font-medium text-accent hover:text-accent-hover border border-accent px-6 py-2 rounded-xl transition-all"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View My Work →
+              </motion.a>
             </div>
           </div>
         </div>
       </section>
 
       {/* ABOUT ME SECTION */}
-      <section className="bg-surface text-theme px-6 py-20 transition-colors duration-300">
+      <section className="bg-surface text-surface dark:text-theme px-6 py-20 transition-colors duration-300">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <motion.h2
             className="text-3xl sm:text-4xl font-bold text-heading"
@@ -146,22 +158,19 @@ const Home = () => {
             About Me
           </motion.h2>
           <motion.p
-            className="text-subtext text-lg"
+            className="text-subtext text-lg max-w-xl text-center mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            I'm a frontend developer with a passion for clean UI, smooth UX, and making the web a
-            more beautiful place. I enjoy turning complex ideas into pixel-perfect, accessible
-            designs. Outside of coding, you'll find me sketching interface ideas, geeking out over
-            animations, or pretending to be a minimalist (while hoarding tabs).
+            I’m a frontend developer who enjoys building fast, accessible interfaces that solve real problems. I completed Harvard’s CS50 because I care about understanding the fundamentals - not just how things work, but why. I love digging into performance, writing clean code, and collaborating on products that actually make a difference.
           </motion.p>
         </div>
       </section>
 
       {/* JOURNEY TIMELINE */}
-      <section className="bg-bg text-theme px-6 py-20 transition-colors duration-300">
+      <section className="bg-bg text-surface dark:text-theme px-6 py-20 transition-colors duration-300 pb-30">
         <div className="max-w-4xl mx-auto">
           <motion.h2
             className="text-3xl sm:text-4xl font-bold text-heading mb-12 text-center"
@@ -173,7 +182,7 @@ const Home = () => {
             My Journey
           </motion.h2>
 
-          <div className="relative border-l border-border pl-6 space-y-12">
+          <div className="relative border-l border-border pl-6 space-y-16 mt-15 ml-15 mr-15">
             {timeline.map((item, idx) => (
               <motion.div
                 key={idx}
