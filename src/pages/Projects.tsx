@@ -50,7 +50,7 @@ const Projects = () => {
     <section className="min-h-screen px-4 py-16 bg-bg text-text transition-colors duration-300">
       <h2 className="text-5xl font-bold text-center text-heading">Projects</h2>
 
-      <div className="lg:space-y-10 max-w-6xl mx-auto mt-10">
+      <div className="lg:space-y-10 max-w-6xl mx-auto mt-5">
         {projects.map((project, index) => (
           <div
             key={index}
