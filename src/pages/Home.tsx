@@ -138,7 +138,7 @@ const Home = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                View My Work →
+                View my work →
               </motion.a>
             </div>
           </div>
