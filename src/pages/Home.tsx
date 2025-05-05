@@ -126,7 +126,7 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
               >
-                I’m a frontend developer who thrives on solving real-world problems with code. I love collaborating to build fast, perfomant websites and apps.
+                I’m a front-end developer who thrives on solving real-world problems with code. I love collaborating to build fast, perfomant websites and apps.
               </motion.p>
 
               <motion.a
