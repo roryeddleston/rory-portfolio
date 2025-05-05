@@ -55,7 +55,7 @@ const Navbar = () => {
             </span>
           </a>
           <a
-            href="/cv.pdf"
+            href="/Rory Eddleston CV v1.0.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative text-xl text-subtext hover:text-accent transition-colors"
@@ -96,7 +96,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay (animated) */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div

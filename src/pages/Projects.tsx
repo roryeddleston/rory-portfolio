@@ -4,13 +4,13 @@ import { FaGithub } from 'react-icons/fa';
 const projects = [
   {
     title: 'Reps & mins',
-    description: 'Scaleable habit tracker with individual auth0 login connected to a Firestore database. CRUD operations and filtering available.',
+    description: 'Scaleable habit tracker with individual Auth0 login connected to a Firestore database. CRUD operations and filtering available. Real-time syncing, mobile responsiveness, and offline support. Built for personal use.',
     link: 'https://repsandminutes.netlify.app',
     github: 'https://github.com/roryeddleston/minutes',
     desktopImg: '/images/minutes-desktop.png',
     mobileImg: '/images/minutes-mobile.png',
     stack: 'React/Redux, Firebase, Auth0 and SCSS.',
-    challenges: 'Real-time syncing, mobile responsiveness, and offline support.',
+    challenges: 'I had to learn how to use Firestore and how to set up a database, ensuring I had everything needed to add new features. Auth0 led to some issues with the login process, but I was able to resolve them.',
   },
   {
     title: 'CoDriver mobile app',
@@ -20,17 +20,17 @@ const projects = [
     mobileImg: '/images/codriver-mobile.png',
     stack: 'React Native, Expo, Sentry and Firebase.',
     challenges:
-      'This project was initially developed by the former lead developer. After they left the company, I stepped in to continue the work — teaching myself app development, addressing bugs, and gradually adding new features.',
+      'Took over in-house app development of this React Native app all by myself. Had to learn how to use Expo and Firebase, as well as how to set up Sentry for error tracking. I also had to learn how to use the Google Maps API and how to implement it into the app.',
   },
   {
     title: 'Revive support hub',
-    description: 'Uniquely styled website for a local charity, aimed at parents of children with additional needs.',
+    description: 'Uniquely styled website for a local charity, aimed at parents of children with additional needs. Built with future updates in mind. The website is fully responsive and includes a donation page.',
     link: 'https://www.revivesupporthub.com/',
     github: 'https://github.com/roryeddleston/revive',
     desktopImg: '/images/revive-desktop.png',
     mobileImg: '/images/revive-mobile.png',
-    stack: 'React, SCSS, email.js and Stripe.',
-    challenges: 'Unique layout proved to be difficult to implement. Built with future updates in mind.',
+    stack: 'React, SCSS, Email.js and Stripe.',
+    challenges: 'Unique layout proved to be difficult to implement, especially for responsiveness. I had to learn how to use Email.js for the contact form and Stripe for the donation page.',
   },
   {
     title: 'Portfolio Website',

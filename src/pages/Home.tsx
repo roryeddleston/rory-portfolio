@@ -164,7 +164,7 @@ const Home = () => {
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            I’m a frontend developer who enjoys building fast, accessible interfaces that solve real problems. I completed Harvard’s CS50 because I care about understanding the fundamentals - not just how things work, but why. I love digging into performance, writing clean code, and collaborating on products that actually make a difference.
+            I’m a versatile frontend developer who enjoys building fast, accessible interfaces that solve real problems. I care about understanding the fundamentals - not just how things work, but why. I love digging into performance, writing clean code, and collaborating on products that actually make a difference.
           </motion.p>
         </div>
       </section>
