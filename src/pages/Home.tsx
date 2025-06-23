@@ -36,13 +36,13 @@ const timeline = [
   },
   {
     year: '2021',
-    title: 'Junior developer role',
+    title: 'Junior developer',
     description: 'Became a junior developer at a creative agency, working on a wide variety of projects.',
     icon: <FaRocket />,
   },
   {
     year: '2022',
-    title: 'Mid level developer role',
+    title: 'Mid level developer',
     description: 'Promoted to mid-level developer, taking on more complex projects and responsibilities.',
     icon: <FaBriefcase />,
   },
@@ -56,7 +56,7 @@ const timeline = [
 
 const Home = () => {
   const [text, setText] = useState('');
-  const fullText = "Hey, I’m Rory";
+  const fullText = "Welcome, I’m Rory";
 
   useEffect(() => {
     let i = 0;
@@ -126,7 +126,7 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
               >
-                I’m a front-end developer who thrives on solving real-world problems with code. I love collaborating to build fast, perfomant websites and apps.
+                A front-end developer who thrives on solving real‑world problems with code. I love collaborating to build fast, perfomant websites and apps.
               </motion.p>
 
               <motion.a
@@ -164,7 +164,7 @@ const Home = () => {
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            I’m a versatile frontend developer who enjoys building fast, accessible interfaces that solve real problems. I care about understanding the fundamentals - not just how things work, but why. I love digging into performance, writing clean code, and collaborating on products that actually make a difference.
+            I’m a versatile front-end developer with over 3 years industry experience. I've worked on many apps and websites, always with a focus to attention to detail. I’m always looking to learn new skills and improve my craft.
           </motion.p>
         </div>
       </section>

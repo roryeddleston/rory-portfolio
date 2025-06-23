@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaGithub } from 'react-icons/fa';
+import { useState } from 'react';
 
 const projects = [
   {
@@ -11,6 +12,10 @@ const projects = [
     mobileImg: '/images/minutes-mobile.png',
     stack: 'React/Redux, Firebase, Auth0 and SCSS.',
     challenges: 'I had to learn how to use Firestore and how to set up a database, ensuring I had everything needed to add new features. Auth0 led to some issues with the login process, but I was able to resolve them.',
+    demo: {
+      email: 'minutes_demo@outlook.com',
+      password: 'Test123!'
+    }
   },
   {
     title: 'CoDriver mobile app',
@@ -19,8 +24,7 @@ const projects = [
     desktopImg: '',
     mobileImg: '/images/codriver-mobile.png',
     stack: 'React Native, Expo, Sentry and Firebase.',
-    challenges:
-      'Took over in-house app development of this React Native app all by myself. Had to learn how to use Expo and Firebase, as well as how to set up Sentry for error tracking. I also had to learn how to use the Google Maps API and how to implement it into the app.',
+    challenges: 'Took over in-house app development of this React Native app all by myself. Had to learn how to use Expo and Firebase, as well as how to set up Sentry for error tracking. I also had to learn how to use the Google Maps API and how to implement it into the app.',
   },
   {
     title: 'Revive support hub',
@@ -40,10 +44,37 @@ const projects = [
     desktopImg: '/images/portfolio-desktop.png',
     mobileImg: '/images/portfolio-mobile.png',
     stack: 'React, TypeScript, Tailwind CSS, Framer Motion and Vite.',
-    challenges:
-      'First time using Vite and Tailwind. It was challenging getting everything up-to-date and making sure all versions were compatible. I also had to learn how to use Framer Motion for the animations.',
+    challenges: 'First time using Vite and Tailwind. It was challenging getting everything up-to-date and making sure all versions were compatible. I also had to learn how to use Framer Motion for the animations.',
   },
 ];
+
+const CopyField = ({ label, value }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(value);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
+  return (
+    <div className="flex items-center gap-2 mb-2">
+      <label className="w-20 text-sm font-medium">{label}:</label>
+      <input
+        type="text"
+        readOnly
+        value={value}
+        className="border rounded px-2 py-1 w-full max-w-xs bg-muted text-sm"
+      />
+      <button
+        onClick={handleCopy}
+        className="px-2 py-1 text-sm bg-accent text-white rounded hover:bg-accent-hover"
+      >
+        {copied ? 'Copied!' : 'Copy'}
+      </button>
+    </div>
+  );
+};
 
 const Projects = () => {
   return (
@@ -52,11 +83,7 @@ const Projects = () => {
 
       <div className="lg:space-y-10 max-w-6xl mx-auto mt-5">
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className="relative flex flex-col-reverse lg:flex-row gap-10 p-6 overflow-hidden rounded-2xl"
-          >
-            {/* Image Section */}
+          <div key={index} className="relative flex flex-col-reverse lg:flex-row gap-10 p-6 overflow-hidden rounded-2xl">
             <div className="relative w-9/10 lg:w-1/2 flex items-center justify-center">
               {project.title === 'CoDriver mobile app' ? (
                 <motion.img
@@ -92,7 +119,6 @@ const Projects = () => {
               )}
             </div>
 
-            {/* Text Section */}
             <motion.div
               initial={{ x: 100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -115,26 +141,23 @@ const Projects = () => {
                 </div>
               )}
 
+              {project.demo && (
+                <div className="mt-4">
+                  <h4 className="text-sm uppercase font-semibold text-muted mb-2">Demo Login</h4>
+                  <CopyField label="Email" value={project.demo.email} />
+                  <CopyField label="Password" value={project.demo.password} />
+                </div>
+              )}
+
               <div className="flex items-center gap-4 pt-2">
                 {project.title !== 'CoDriver mobile app' && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent font-medium hover:text-accent-hover"
-                  >
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-accent font-medium hover:text-accent-hover">
                     Visit website
                   </a>
                 )}
 
                 {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent text-xl hover:text-accent-hover"
-                    aria-label={`View ${project.title} on GitHub`}
-                  >
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-accent text-xl hover:text-accent-hover" aria-label={`View ${project.title} on GitHub`}>
                     <FaGithub />
                   </a>
                 )}
