@@ -28,7 +28,7 @@ const projects = [
   },
   {
     title: 'Ignition website',
-    description: 'A modern responsive website for a creative agency I used to work for. Which includes a unique design, multiple moving carosels and a blog',
+    description: 'A modern responsive website for a creative agency I used to work for. Which includes a unique design, multiple moving carosels and a blog.',
     link: 'https://www.ignitiononline.com/',
     desktopImg: '/images/ignition-desktop.png',
     mobileImg: '/images/ignition-mobile.png',
