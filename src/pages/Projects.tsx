@@ -27,6 +27,15 @@ const projects = [
     challenges: 'Took over in-house app development of this React Native app all by myself. Had to learn how to use Expo and Firebase, as well as how to set up Sentry for error tracking. I also had to learn how to use the Google Maps API and how to implement it into the app.',
   },
   {
+    title: 'Ignition website',
+    description: 'A modern responsive website for a creative agency I used to work for. Which includes a unique design, multiple moving carosels and a blog',
+    link: 'https://www.ignitiononline.com/',
+    desktopImg: '/images/ignition-desktop.png',
+    mobileImg: '/images/ignition-mobile.png',
+    stack: 'React, SCSS, Email.js and Next.js.',
+    challenges: 'Unusual layout and design required creative solutions for responsiveness. I had to learn how to use Next.js for server-side rendering and Email.js for the contact form.',
+  },
+  {
     title: 'Revive support hub',
     description: 'Uniquely styled website for a local charity, aimed at parents of children with additional needs. Built with future updates in mind. The website is fully responsive and includes a donation page.',
     link: 'https://www.revivesupporthub.com/',
