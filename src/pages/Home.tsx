@@ -83,7 +83,7 @@ const Home = () => {
                 key={idx}
                 className="absolute text-accent opacity-30 text-4xl sm:text-5xl pointer-events-none select-none"
                 animate={{ y: [0, -floatDistance, 0] }}
-                transition={{ repeat: Infinity, duration, ease: 'easeInOut', delay }}
+                transition={{ repeat: Infinity, duration, ease: 'easeInOut' }}
                 style={{ top: item.top, left: item.left }}
               >
                 {item.icon}
