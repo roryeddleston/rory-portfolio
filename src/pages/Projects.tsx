@@ -4,6 +4,20 @@ import { useState } from 'react';
 
 const projects = [
   {
+    title: 'Travel buddy',
+    description: 'A travel inspiration app where users can browse scenic destinations, search for photos, view live weather, and save trips to their profile. Features user authentication, dynamic API integrations, and a responsive, modern design.',
+    link: 'https://travelbuddywebsite.netlify.app/',
+    github: 'https://github.com/roryeddleston/travel-buddy',
+    desktopImg: '/images/travelbuddy-desktop.png',
+    mobileImg: '/images/travelbuddy-mobile.png',
+    stack: 'React, TypeScript, Firebase Auth, Unsplash API, OpenWeather API, Tailwind CSS, Framer Motion and Vite.',
+    challenges: 'Integrating multiple APIs simultaneously was complex, especially handling edge cases for locations not recognized by the weather API. Deploying to Netlify required additional environment variable configuration and resolving peer dependency conflicts for build tools like Stylelint. Managing authentication flow and updating user profiles in Firebase also presented challenges I successfully resolved.',
+    demo: {
+      email: 'demo@travelbuddy.com',
+      password: 'Password123'
+    }
+  },
+  {
     title: 'Reps & mins',
     description: 'Scaleable habit tracker with individual Auth0 login connected to a Firestore database. CRUD operations and filtering available. Real-time syncing, mobile responsiveness, and offline support. Built for personal use.',
     link: 'https://repsandminutes.netlify.app',
