@@ -14,21 +14,7 @@ const projects = [
     challenges: 'Integrating multiple APIs simultaneously was complex, especially handling edge cases for locations not recognized by the weather API. Deploying to Netlify required additional environment variable configuration and resolving peer dependency conflicts for build tools like Stylelint. Managing authentication flow and updating user profiles in Firebase also presented challenges I successfully resolved.',
     demo: {
       email: 'demo@travelbuddy.com',
-      password: 'Password123'
-    }
-  },
-  {
-    title: 'Reps & mins',
-    description: 'Scaleable habit tracker with individual Auth0 login connected to a Firestore database. CRUD operations and filtering available. Real-time syncing, mobile responsiveness, and offline support. Built for personal use.',
-    link: 'https://repsandminutes.netlify.app',
-    github: 'https://github.com/roryeddleston/minutes',
-    desktopImg: '/images/minutes-desktop.png',
-    mobileImg: '/images/minutes-mobile.png',
-    stack: 'React/Redux, Firebase, Auth0 and SCSS.',
-    challenges: 'I had to learn how to use Firestore and how to set up a database, ensuring I had everything needed to add new features. Auth0 led to some issues with the login process, but I was able to resolve them.',
-    demo: {
-      email: 'minutes_demo@outlook.com',
-      password: 'Test123!'
+      password: 'password123'
     }
   },
   {
@@ -48,6 +34,20 @@ const projects = [
     mobileImg: '/images/ignition-mobile.png',
     stack: 'React, SCSS, Email.js and Next.js.',
     challenges: 'Unusual layout and design required creative solutions for responsiveness. I had to learn how to use Next.js for server-side rendering and Email.js for the contact form.',
+  },
+  {
+    title: 'Reps & mins',
+    description: 'Scaleable habit tracker with individual Auth0 login connected to a Firestore database. CRUD operations and filtering available. Real-time syncing, mobile responsiveness, and offline support. Built for personal use.',
+    link: 'https://repsandminutes.netlify.app',
+    github: 'https://github.com/roryeddleston/minutes',
+    desktopImg: '/images/minutes-desktop.png',
+    mobileImg: '/images/minutes-mobile.png',
+    stack: 'React/Redux, Firebase, Auth0 and SCSS.',
+    challenges: 'I had to learn how to use Firestore and how to set up a database, ensuring I had everything needed to add new features. Auth0 led to some issues with the login process, but I was able to resolve them.',
+    demo: {
+      email: 'minutes_demo@outlook.com',
+      password: 'Test123!'
+    }
   },
   {
     title: 'Revive support hub',
