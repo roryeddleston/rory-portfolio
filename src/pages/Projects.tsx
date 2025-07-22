@@ -5,7 +5,7 @@ import { useState } from 'react';
 const projects = [
   {
     title: 'Travel buddy',
-    description: 'A travel inspiration app where users can browse scenic destinations, search for photos, view live weather, and save trips to their profile. Features user authentication, dynamic API integrations, and a responsive, modern design.',
+    description: 'A travel inspiration app where users can browse scenic destinations, search for photos, view live weather, and save trips to their profile. Features user authentication, dynamic API integrations, and a responsive modern design.',
     link: 'https://travelbuddywebsite.netlify.app/',
     github: 'https://github.com/roryeddleston/travel-buddy',
     desktopImg: '/images/travelbuddy-desktop.png',
@@ -37,7 +37,7 @@ const projects = [
   },
   {
     title: 'Reps & mins',
-    description: 'Scaleable habit tracker with individual Auth0 login connected to a Firestore database. CRUD operations and filtering available. Real-time syncing, mobile responsiveness, and offline support. Built for personal use.',
+    description: 'Scalable habit tracker with individual Auth0 login connected to a Firestore database. CRUD operations and filtering available. Real-time syncing, mobile responsiveness, and offline support. Built for personal use.',
     link: 'https://repsandminutes.netlify.app',
     github: 'https://github.com/roryeddleston/minutes',
     desktopImg: '/images/minutes-desktop.png',
