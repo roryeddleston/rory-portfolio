@@ -103,8 +103,10 @@ const Projects = () => {
   return (
     <section className="min-h-screen px-4 py-16 bg-bg text-text transition-colors duration-300">
       <h2 className="text-5xl font-bold text-center text-heading">Projects</h2>
-
-      <div className="lg:space-y-10 max-w-6xl mx-auto mt-5">
+      <p className="text-center text-subtext mt-15 text-base max-w-xxl mx-auto">
+        This is a selection of public projects - many others from my past role remain confidential.
+      </p>
+      <div className="lg:space-y-10 max-w-6xl mx-auto">
         {projects.map((project, index) => (
           <div key={index} className="relative flex flex-col-reverse lg:flex-row gap-10 p-6 overflow-hidden rounded-2xl">
             <div className="relative w-9/10 lg:w-1/2 flex items-center justify-center">
