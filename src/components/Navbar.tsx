@@ -55,7 +55,7 @@ const Navbar = () => {
             </span>
           </a>
           <a
-            href="/Rory Eddleston CV v2.0.pdf"
+            href="/Rory Eddleston CV v2.1.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative text-xl text-subtext hover:text-accent transition-colors"
