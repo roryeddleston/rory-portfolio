@@ -164,7 +164,7 @@ const Home = () => {
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            I’m a versatile front-end developer with over 3 years industry experience. I've worked on many apps and websites, always with a focus to attention to detail. I’m always looking to learn new skills and improve my craft.
+            I’m a versatile front-end developer with over 3 years industry experience. I've worked on many apps and websites, always with a focus on attention to detail. I’m always looking to learn new skills and improve my craft.
           </motion.p>
         </div>
       </section>
