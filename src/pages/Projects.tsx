@@ -15,6 +15,10 @@ const projects = [
       "Next.js 15, React, Clerk, PostgreSQL, Prisma, Tailwind CSS, Framer Motion.",
     challenges:
       "Refactoring to support user-specific data using Clerk and Prisma was a major task. Optimistic UI updates with drag-and-drop interactions using @dnd-kit posed challenges around state management and syncing with the database. Designing an intuitive dashboard required extensive iteration and layout restructuring.",
+    demo: {
+      email: "lifeos-test@outlook.com",
+      password: "j(3t~I:'`1K8",
+    },
   },
   {
     title: "CoDriver mobile app",
