@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import {
   SiReact,
   SiTypescript,
@@ -10,52 +10,62 @@ import {
   SiTailwindcss,
   SiFigma,
   SiAdobephotoshop,
-} from 'react-icons/si';
-import { FaMobileAlt, FaCode, FaRocket, FaBriefcase, FaLaptopCode } from 'react-icons/fa';
-import '../index.css';
+} from "react-icons/si";
+import {
+  FaMobileAlt,
+  FaCode,
+  FaRocket,
+  FaBriefcase,
+  FaLaptopCode,
+} from "react-icons/fa";
+import "../index.css";
 
 const floatingIcons = [
-  { icon: <SiReact />, top: '10%', left: '15%' },
-  { icon: <SiTypescript />, top: '25%', left: '80%' },
-  { icon: <SiPostgresql />, top: '60%', left: '10%' },
-  { icon: <SiCss3 />, top: '70%', left: '70%' },
-  { icon: <SiSass />, top: '15%', left: '60%' },
-  { icon: <FaMobileAlt />, top: '80%', left: '25%' },
-  { icon: <SiFirebase />, top: '85%', left: '45%' },
-  { icon: <SiTailwindcss />, top: '80%', left: '90%' },
-  { icon: <SiFigma />, top: '40%', left: '20%' },
-  { icon: <SiAdobephotoshop />, top: '20%', left: '40%' },
+  { icon: <SiReact />, top: "10%", left: "15%" },
+  { icon: <SiTypescript />, top: "25%", left: "80%" },
+  { icon: <SiPostgresql />, top: "60%", left: "10%" },
+  { icon: <SiCss3 />, top: "70%", left: "70%" },
+  { icon: <SiSass />, top: "15%", left: "60%" },
+  { icon: <FaMobileAlt />, top: "80%", left: "25%" },
+  { icon: <SiFirebase />, top: "85%", left: "45%" },
+  { icon: <SiTailwindcss />, top: "80%", left: "90%" },
+  { icon: <SiFigma />, top: "40%", left: "20%" },
+  { icon: <SiAdobephotoshop />, top: "20%", left: "40%" },
 ];
 
 const timeline = [
   {
-    year: '2019',
-    title: 'Started learning to code',
-    description: 'Taught myself HTML, CSS and JavaScript while working full-time as a data analyst.',
+    year: "2019",
+    title: "Started learning to code",
+    description:
+      "Taught myself HTML, CSS and JavaScript while working full-time as a data analyst.",
     icon: <FaCode />,
   },
   {
-    year: '2021',
-    title: 'Junior developer',
-    description: 'Became a junior developer at a creative agency, working on a wide variety of projects.',
+    year: "2021",
+    title: "Junior developer",
+    description:
+      "Became a junior developer at a creative agency, working on a wide variety of projects.",
     icon: <FaRocket />,
   },
   {
-    year: '2022',
-    title: 'Mid level developer',
-    description: 'Promoted to mid-level developer, taking on more complex projects and responsibilities.',
+    year: "2022",
+    title: "Mid level developer",
+    description:
+      "Promoted to mid-level developer, taking on more complex projects and responsibilities.",
     icon: <FaBriefcase />,
   },
   {
-    year: '2025',
-    title: 'Left to travel, focus on fundamentals and the latest tools',
-    description: 'Built a website for a local charity, worked on personal projects and taught myself TypeScript.',
+    year: "2025",
+    title: "Left to travel, focus on fundamentals and the latest tools",
+    description:
+      "Built a website for a local charity, worked on personal projects and taught myself TypeScript.",
     icon: <FaLaptopCode />,
   },
 ];
 
 const Home = () => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const fullText = "Welcome, I’m Rory";
 
   useEffect(() => {
@@ -83,7 +93,7 @@ const Home = () => {
                 key={idx}
                 className="absolute text-accent opacity-30 text-4xl sm:text-5xl pointer-events-none select-none"
                 animate={{ y: [0, -floatDistance, 0] }}
-                transition={{ repeat: Infinity, duration, ease: 'easeInOut' }}
+                transition={{ repeat: Infinity, duration, ease: "easeInOut" }}
                 style={{ top: item.top, left: item.left }}
               >
                 {item.icon}
@@ -103,7 +113,7 @@ const Home = () => {
               transition={{
                 delay: 1,
                 duration: 1,
-                ease: 'easeOut',
+                ease: "easeOut",
               }}
               className="w-36 h-36 rounded-full border-[4px] border-accent text-accent shadow-lg object-cover"
             />
@@ -117,7 +127,9 @@ const Home = () => {
                 transition={{ duration: 0.8 }}
               >
                 {text}
-                {text !== fullText && <span className="blinking-cursor">|</span>}
+                {text !== fullText && (
+                  <span className="blinking-cursor">|</span>
+                )}
               </motion.h1>
 
               <motion.p
@@ -126,14 +138,16 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
               >
-                A front-end developer who thrives on solving real‑world problems with code. I love collaborating to build fast, perfomant websites and apps.
+                A front-end developer who thrives on solving real‑world problems
+                with code. I love collaborating to build fast, perfomant
+                websites and apps.
               </motion.p>
 
               <motion.a
                 href="/projects"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.3, duration: 0.1, ease: 'easeOut' }}
+                transition={{ delay: 1.3, duration: 0.1, ease: "easeOut" }}
                 className="inline-block mt-6 text-lg font-medium text-accent hover:text-accent-hover border border-accent px-6 py-2 rounded-xl transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -164,7 +178,10 @@ const Home = () => {
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            I’m a versatile front-end developer with over 3 years industry experience. I've worked on many apps and websites, always with a focus on attention to detail. I’m always looking to learn new skills and improve my craft.
+            I’m a versatile front-end developer with over 3 years industry
+            experience. I've worked on many apps and websites, always with a
+            focus on attention to detail. I’m always looking to learn new skills
+            and improve my craft.
           </motion.p>
         </div>
       </section>

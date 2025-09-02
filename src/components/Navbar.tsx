@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
   FiHome,
   FiFolder,
@@ -8,15 +8,15 @@ import {
   FiFileText,
   FiMenu,
   FiX,
-} from 'react-icons/fi';
-import { motion, AnimatePresence } from 'framer-motion';
-import ThemeToggle from './ThemeToggle';
-import '../index.css';
+} from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from "./ThemeToggle";
+import "../index.css";
 
 const navLinks = [
-  { to: '/', label: 'Home', icon: <FiHome /> },
-  { to: '/projects', label: 'Projects', icon: <FiFolder /> },
-  { to: '/contact', label: 'Contact', icon: <FiMail /> },
+  { to: "/", label: "Home", icon: <FiHome /> },
+  { to: "/projects", label: "Projects", icon: <FiFolder /> },
+  { to: "/contact", label: "Contact", icon: <FiMail /> },
 ];
 
 const Navbar = () => {
@@ -27,14 +27,13 @@ const Navbar = () => {
     <>
       {/* Sidebar for desktop */}
       <aside className="hidden md:flex fixed top-0 left-0 h-full w-20 bg-surface border-r border-border flex-col items-center pt-6 z-50 transition-colors space-y-6">
-
         <nav className="flex flex-col items-center space-y-8 mt-6">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               className={`group relative text-xl text-subtext hover:text-accent transition-colors ${
-                pathname === link.to ? 'text-accent' : ''
+                pathname === link.to ? "text-accent" : ""
               }`}
             >
               {link.icon}
@@ -55,7 +54,7 @@ const Navbar = () => {
             </span>
           </a>
           <a
-            href="/Rory Eddleston CV v2.1.pdf"
+            href="/Rory Eddleston CV v2.4.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative text-xl text-subtext hover:text-accent transition-colors"
@@ -82,13 +81,13 @@ const Navbar = () => {
           <div className="relative w-7 h-7 flex items-center justify-center">
             <FiMenu
               className={`absolute transition-opacity transform duration-300 ${
-                mobileOpen ? 'opacity-0 scale-90' : 'opacity-100 scale-100'
+                mobileOpen ? "opacity-0 scale-90" : "opacity-100 scale-100"
               }`}
               size={30}
             />
             <FiX
               className={`absolute transition-opacity transform duration-300 ${
-                mobileOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+                mobileOpen ? "opacity-100 scale-100" : "opacity-0 scale-90"
               }`}
               size={30}
             />
@@ -100,10 +99,10 @@ const Navbar = () => {
         {mobileOpen && (
           <motion.div
             className="fixed inset-0 bg-surface text-text z-50 flex flex-col items-center justify-center space-y-8 px-6 md:hidden"
-            initial={{ x: '-100%' }}
+            initial={{ x: "-100%" }}
             animate={{ x: 0 }}
-            exit={{ x: '-100%' }}
-            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            exit={{ x: "-100%" }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             {navLinks.map((link) => (
               <Link
@@ -111,7 +110,7 @@ const Navbar = () => {
                 to={link.to}
                 onClick={() => setMobileOpen(false)}
                 className={`text-2xl font-semibold hover:text-accent transition-colors ${
-                  pathname === link.to ? 'text-accent' : ''
+                  pathname === link.to ? "text-accent" : ""
                 }`}
               >
                 {link.label}
