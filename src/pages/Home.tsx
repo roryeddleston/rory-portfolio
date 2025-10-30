@@ -86,7 +86,6 @@ const Home = () => {
           {floatingIcons.map((item, idx) => {
             const floatDistance = Math.floor(Math.random() * 40) + 20;
             const duration = Math.random() * 4 + 4;
-            const delay = Math.random() * 2;
 
             return (
               <motion.div
@@ -106,7 +105,7 @@ const Home = () => {
           <div className="flex flex-col md:flex-row items-center justify-center gap-10">
             {/* Image */}
             <motion.img
-              src="/images/profile.jpg"
+              src="/images/profile.webp"
               alt="Rory"
               initial={{ opacity: 0, y: 40, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}

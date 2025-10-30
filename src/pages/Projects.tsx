@@ -9,8 +9,8 @@ const projects = [
       "A personal productivity dashboard with habits, tasks, and goal tracking. Fully authenticated via Clerk with real-time UI updates, drag-and-drop functionality, and an animated modern design.",
     link: "https://lifeos-beige.vercel.app/",
     github: "https://github.com/roryeddleston/lifeos",
-    desktopImg: "/images/lifeos-desktop.png",
-    mobileImg: "/images/lifeos-mobile.png",
+    desktopImg: "/images/lifeos-desktop.webp",
+    mobileImg: "/images/lifeos-mobile.webp",
     stack:
       "Next.js 15, React, Clerk, PostgreSQL, Prisma, Tailwind CSS, Framer Motion.",
     challenges:
@@ -26,7 +26,7 @@ const projects = [
       "Navigation app with tracking/audio files for drivers using React Native and Expo.",
     link: "#",
     desktopImg: "",
-    mobileImg: "/images/codriver-mobile.png",
+    mobileImg: "/images/codriver-mobile.webp",
     stack: "React Native, Expo, Sentry and Firebase.",
     challenges:
       "Took over in-house app development of this React Native app all by myself. Had to learn how to use Expo and Firebase, as well as how to set up Sentry for error tracking. I also had to learn how to use the Google Maps API and how to implement it into the app.",
@@ -36,8 +36,8 @@ const projects = [
     description:
       "A modern responsive website for a creative agency I used to work for. Which includes a unique design, multiple moving carosels and a blog.",
     link: "https://www.ignitiononline.com/",
-    desktopImg: "/images/ignition-desktop.png",
-    mobileImg: "/images/ignition-mobile.png",
+    desktopImg: "/images/ignition-desktop.webp",
+    mobileImg: "/images/ignition-mobile.webp",
     stack: "React, SCSS, Email.js and Next.js.",
     challenges:
       "Unusual layout and design required creative solutions for responsiveness. I had to learn how to use Next.js for server-side rendering and Email.js for the contact form.",
@@ -48,8 +48,8 @@ const projects = [
       "A travel inspiration app where users can browse scenic destinations, search for photos, view live weather, and save trips to their profile. Features user authentication, dynamic API integrations, and a responsive modern design.",
     link: "https://travelbuddywebsite.netlify.app/",
     github: "https://github.com/roryeddleston/travel-buddy",
-    desktopImg: "/images/travelbuddy-desktop.png",
-    mobileImg: "/images/travelbuddy-mobile.png",
+    desktopImg: "/images/travelbuddy-desktop.webp",
+    mobileImg: "/images/travelbuddy-mobile.webp",
     stack:
       "React, TypeScript, Firebase Auth, Unsplash API, OpenWeather API, Tailwind CSS, Framer Motion and Vite.",
     challenges:
@@ -65,8 +65,8 @@ const projects = [
       "Uniquely styled website for a local charity, aimed at parents of children with additional needs. Built with future updates in mind. The website is fully responsive and includes a donation page.",
     link: "https://www.revivesupporthub.com/",
     github: "https://github.com/roryeddleston/revive",
-    desktopImg: "/images/revive-desktop.png",
-    mobileImg: "/images/revive-mobile.png",
+    desktopImg: "/images/revive-desktop.webp",
+    mobileImg: "/images/revive-mobile.webp",
     stack: "React, SCSS, Email.js and Stripe.",
     challenges:
       "Unique layout proved to be difficult to implement, especially for responsiveness. I had to learn how to use Email.js for the contact form and Stripe for the donation page.",
@@ -77,8 +77,8 @@ const projects = [
       "A clean and performant portfolio website. Mobile first design with dark/light mode toggle.",
     link: "https://roryeddleston.dev",
     github: "https://github.com/roryeddleston/rory-portfolio",
-    desktopImg: "/images/portfolio-desktop.png",
-    mobileImg: "/images/portfolio-mobile.png",
+    desktopImg: "/images/portfolio-desktop.webp",
+    mobileImg: "/images/portfolio-mobile.webp",
     stack: "React, TypeScript, Tailwind CSS, Framer Motion and Vite.",
     challenges:
       "First time using Vite and Tailwind. It was challenging getting everything up-to-date and making sure all versions were compatible. I also had to learn how to use Framer Motion for the animations.",
