@@ -21,16 +21,76 @@ import {
 import "../index.css";
 
 const floatingIcons = [
-  { icon: <SiReact />, top: "15%", left: "12%" },
-  { icon: <SiTypescript />, top: "25%", left: "80%" },
-  { icon: <SiPostgresql />, top: "80%", left: "10%" },
-  { icon: <SiCss3 />, top: "76%", left: "74%" },
-  { icon: <SiSass />, top: "15%", left: "60%" },
-  { icon: <FaMobileAlt />, top: "80%", left: "30%" },
-  { icon: <SiFirebase />, top: "90%", left: "50%" },
-  { icon: <SiTailwindcss />, top: "80%", left: "90%" },
-  { icon: <SiFigma />, top: "35%", left: "20%" },
-  { icon: <SiAdobephotoshop />, top: "20%", left: "40%" },
+  {
+    icon: <SiReact />,
+    top: "15%",
+    left: "12%",
+    mobileTop: "22%",
+    mobileLeft: "12%",
+  },
+  {
+    icon: <SiTypescript />,
+    top: "25%",
+    left: "80%",
+    mobileTop: "25%",
+    mobileLeft: "80%",
+  },
+  {
+    icon: <SiPostgresql />,
+    top: "80%",
+    left: "10%",
+    mobileTop: "85%",
+    mobileLeft: "10%",
+  },
+  {
+    icon: <SiCss3 />,
+    top: "76%",
+    left: "74%",
+    mobileTop: "76%",
+    mobileLeft: "85%",
+  },
+  {
+    icon: <SiSass />,
+    top: "15%",
+    left: "60%",
+    mobileTop: "10%",
+    mobileLeft: "60%",
+  },
+  {
+    icon: <FaMobileAlt />,
+    top: "80%",
+    left: "30%",
+    mobileTop: "94%",
+    mobileLeft: "30%",
+  },
+  {
+    icon: <SiFirebase />,
+    top: "90%",
+    left: "50%",
+    mobileTop: "90%",
+    mobileLeft: "50%",
+  },
+  {
+    icon: <SiTailwindcss />,
+    top: "85%",
+    left: "90%",
+    mobileTop: "90%",
+    mobileLeft: "85%",
+  },
+  {
+    icon: <SiFigma />,
+    top: "35%",
+    left: "20%",
+    mobileTop: "35%",
+    mobileLeft: "10%",
+  },
+  {
+    icon: <SiAdobephotoshop />,
+    top: "20%",
+    left: "40%",
+    mobileTop: "8%",
+    mobileLeft: "35%",
+  },
 ];
 
 const timeline = [
@@ -68,6 +128,29 @@ const Home = () => {
   const [text, setText] = useState("");
   const fullText = "Welcome, I’m Rory";
 
+  // Detect mobile (<= 640px) so you can set mobileTop/mobileLeft per icon
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 640px)");
+    const onChange = (e: MediaQueryListEvent | MediaQueryList) =>
+      setIsMobile("matches" in e ? e.matches : (e as MediaQueryList).matches);
+    onChange(mq);
+    if (mq.addEventListener)
+      mq.addEventListener("change", onChange as EventListener);
+    else
+      mq.addListener(
+        onChange as (this: MediaQueryList, ev: MediaQueryListEvent) => any
+      );
+    return () => {
+      if (mq.removeEventListener)
+        mq.removeEventListener("change", onChange as EventListener);
+      else
+        mq.removeListener(
+          onChange as (this: MediaQueryList, ev: MediaQueryListEvent) => any
+        );
+    };
+  }, []);
+
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
@@ -93,7 +176,11 @@ const Home = () => {
                 className="absolute text-accent opacity-30 text-4xl sm:text-5xl pointer-events-none select-none"
                 animate={{ y: [0, -floatDistance, 0] }}
                 transition={{ repeat: Infinity, duration, ease: "easeInOut" }}
-                style={{ top: item.top, left: item.left }}
+                style={{
+                  top: isMobile && item.mobileTop ? item.mobileTop : item.top,
+                  left:
+                    isMobile && item.mobileLeft ? item.mobileLeft : item.left,
+                }}
               >
                 {item.icon}
               </motion.div>
@@ -137,7 +224,7 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
               >
-                A front-end developer who thrives on solving real‑world problems
+                A front-end developer who thrives on solving real-world problems
                 with code. I love collaborating to build fast, perfomant
                 websites and apps.
               </motion.p>
