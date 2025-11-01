@@ -21,15 +21,15 @@ import {
 import "../index.css";
 
 const floatingIcons = [
-  { icon: <SiReact />, top: "10%", left: "15%" },
+  { icon: <SiReact />, top: "15%", left: "12%" },
   { icon: <SiTypescript />, top: "25%", left: "80%" },
-  { icon: <SiPostgresql />, top: "60%", left: "10%" },
-  { icon: <SiCss3 />, top: "70%", left: "70%" },
+  { icon: <SiPostgresql />, top: "80%", left: "10%" },
+  { icon: <SiCss3 />, top: "76%", left: "74%" },
   { icon: <SiSass />, top: "15%", left: "60%" },
-  { icon: <FaMobileAlt />, top: "80%", left: "25%" },
-  { icon: <SiFirebase />, top: "85%", left: "45%" },
+  { icon: <FaMobileAlt />, top: "80%", left: "30%" },
+  { icon: <SiFirebase />, top: "90%", left: "50%" },
   { icon: <SiTailwindcss />, top: "80%", left: "90%" },
-  { icon: <SiFigma />, top: "40%", left: "20%" },
+  { icon: <SiFigma />, top: "35%", left: "20%" },
   { icon: <SiAdobephotoshop />, top: "20%", left: "40%" },
 ];
 
