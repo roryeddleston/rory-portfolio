@@ -4,6 +4,17 @@ import { useState } from "react";
 
 const projects = [
   {
+    title: "Pokémon Alternative Investment Fund",
+    inDevelopment: true,
+    description:
+      "Premium, animated marketing site for a dummy Pokémon alternative investment fund focused on PSA-graded cards. Features a responsive slab-fan hero, shokunin-inspired best practices, and Sanity-driven content.",
+    desktopImg: "/images/pokemon-desktop.webp",
+    mobileImg: "/images/pokemon-mobile.webp",
+    stack: "Next.js 15, React, Tailwind CSS, Framer Motion, REST API, Sanity.",
+    challenges:
+      "High-fidelity slab fan without blur, accessible motion (reduced-motion safe), content modeling in Sanity, and a tokenized design system.",
+  },
+  {
     title: "LifeOS productivity app",
     description:
       "A personal productivity dashboard with habits, tasks, and goal tracking. Fully authenticated via Clerk with real-time UI updates, drag-and-drop functionality, and an animated modern design.",
@@ -41,23 +52,6 @@ const projects = [
     stack: "React, SCSS, Email.js and Next.js.",
     challenges:
       "Unusual layout and design required creative solutions for responsiveness. I had to learn how to use Next.js for server-side rendering and Email.js for the contact form.",
-  },
-  {
-    title: "Travel buddy",
-    description:
-      "A travel inspiration app where users can browse scenic destinations, search for photos, view live weather, and save trips to their profile. Features user authentication, dynamic API integrations, and a responsive modern design.",
-    link: "https://travelbuddywebsite.netlify.app/",
-    github: "https://github.com/roryeddleston/travel-buddy",
-    desktopImg: "/images/travelbuddy-desktop.webp",
-    mobileImg: "/images/travelbuddy-mobile.webp",
-    stack:
-      "React, TypeScript, Firebase Auth, Unsplash API, OpenWeather API, Tailwind CSS, Framer Motion and Vite.",
-    challenges:
-      "Integrating multiple APIs simultaneously was complex, especially handling edge cases for locations not recognized by the weather API. Deploying to Netlify required additional environment variable configuration and resolving peer dependency conflicts for build tools like Stylelint. Managing authentication flow and updating user profiles in Firebase also presented challenges I successfully resolved.",
-    demo: {
-      email: "demo@travelbuddy.com",
-      password: "password123",
-    },
   },
   {
     title: "Revive support hub",
@@ -121,6 +115,7 @@ const Projects = () => {
         This is a selection of public projects - many others remain
         confidential.
       </p>
+
       <div className="lg:space-y-10 max-w-6xl mx-auto">
         {projects.map((project, index) => (
           <div
@@ -169,9 +164,20 @@ const Projects = () => {
               viewport={{ once: true }}
               className="flex-1 space-y-4 lg:mt-20 lg:ml-20"
             >
-              <h3 className="text-3xl font-bold text-accent">
+              <h3 className="text-3xl font-bold text-accent flex flex-wrap items-center gap-3">
                 {project.title}
+
+                {project.inDevelopment && (
+                  <span
+                    className="inline-flex items-center rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-accent shadow-sm"
+                    aria-label="In development"
+                    title="In development"
+                  >
+                    In development
+                  </span>
+                )}
               </h3>
+
               <p className="text-subtext mb-7">{project.description}</p>
 
               <div>
@@ -201,7 +207,7 @@ const Projects = () => {
               )}
 
               <div className="flex items-center gap-4 pt-2">
-                {project.title !== "CoDriver mobile app" && (
+                {project.link && !project.inDevelopment && (
                   <a
                     href={project.link}
                     target="_blank"
