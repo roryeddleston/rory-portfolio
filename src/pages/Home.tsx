@@ -234,11 +234,17 @@ const Home = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.3, duration: 0.1, ease: "easeOut" }}
-                className="inline-block mt-6 text-lg font-medium text-accent hover:text-accent-hover border border-accent px-6 py-2 rounded-xl transition-all"
+                className="group inline-flex items-center gap-2 mt-6 text-lg font-medium text-accent hover-accent border border-accent px-6 py-2 rounded-xl transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                View my work →
+                View my work
+                <span
+                  aria-hidden="true"
+                  className="inline-block transition-transform duration-200 ease-out group-hover:translate-x-1"
+                >
+                  →
+                </span>
               </motion.a>
             </div>
           </div>

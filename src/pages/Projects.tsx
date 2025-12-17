@@ -212,7 +212,7 @@ const Projects = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-accent font-medium hover:text-accent-hover"
+                    className="text-accent font-medium hover-accent"
                   >
                     Visit website
                   </a>
@@ -223,7 +223,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-accent text-xl hover:text-accent-hover"
+                    className="text-accent text-xl hover-accent"
                     aria-label={`View ${project.title} on GitHub`}
                   >
                     <FaGithub />
