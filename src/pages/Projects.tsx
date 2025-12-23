@@ -110,11 +110,26 @@ const CopyField = ({ label, value }) => {
 const Projects = () => {
   return (
     <section className="min-h-screen px-4 py-16 bg-bg text-text transition-colors duration-300">
-      <h2 className="text-5xl font-bold text-center text-heading">Projects</h2>
-      <p className="text-center text-subtext mt-15 text-base max-w-xxl mx-auto">
+      <motion.h2
+        className="text-5xl font-bold text-center text-heading"
+        initial={{ opacity: 0, y: 14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.6 }}
+      >
+        Projects
+      </motion.h2>
+
+      <motion.p
+        className="text-center text-subtext mt-15 text-base max-w-xxl mx-auto 2xl:mb-20"
+        initial={{ opacity: 0, y: 14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.12 }}
+        viewport={{ once: true, amount: 0.6 }}
+      >
         This is a selection of public projects - many others remain
         confidential.
-      </p>
+      </motion.p>
 
       <div className="lg:space-y-10 max-w-6xl mx-auto">
         {projects.map((project, index) => (
