@@ -79,7 +79,12 @@ const projects = [
   },
 ];
 
-const CopyField = ({ label, value }) => {
+type CopyFieldProps = {
+  label: string;
+  value: string;
+};
+
+const CopyField = ({ label, value }: CopyFieldProps) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
