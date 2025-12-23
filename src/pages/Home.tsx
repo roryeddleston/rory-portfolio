@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   SiReact,
   SiTypescript,
@@ -126,14 +126,14 @@ const timeline = [
   },
 ];
 
-const container = {
+const container: Variants = {
   hidden: {},
   show: {
     transition: { staggerChildren: 0.12, delayChildren: 0.05 },
   },
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 14 },
   show: {
     opacity: 1,
@@ -142,7 +142,7 @@ const fadeUp = {
   },
 };
 
-const fadeOnly = {
+const fadeOnly: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -162,10 +162,15 @@ const Home = () => {
   // Detect mobile (<= 640px) so you can set mobileTop/mobileLeft per icon
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 640px)");
-    const onChange = (e) => setIsMobile("matches" in e ? e.matches : e.matches);
-    onChange(mq);
+
+    // initial value
+    setIsMobile(mq.matches);
+
+    const onChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+
     if (mq.addEventListener) mq.addEventListener("change", onChange);
     else mq.addListener(onChange);
+
     return () => {
       if (mq.removeEventListener) mq.removeEventListener("change", onChange);
       else mq.removeListener(onChange);
@@ -275,14 +280,15 @@ const Home = () => {
                 <span>Framer Motion</span>
               </motion.p>
 
-              {/* CTAs */}
+              {/* CTAs (reversed styles) */}
               <motion.div
                 variants={fadeUp}
                 className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-3 mt-8"
               >
+                {/* View projects -> outline */}
                 <motion.a
                   href="/projects"
-                  className="group inline-flex items-center justify-center gap-2 text-base font-medium text-white bg-accent px-6 py-3 rounded-xl transition-all hover:bg-accent-hover"
+                  className="group inline-flex items-center justify-center gap-2 text-base font-medium text-accent border border-accent/60 px-6 py-3 rounded-xl transition-all hover:border-accent"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -295,11 +301,12 @@ const Home = () => {
                   </span>
                 </motion.a>
 
+                {/* GitHub -> filled */}
                 <motion.a
                   href="https://github.com/roryeddleston"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 text-base font-medium text-accent border border-accent/60 px-6 py-3 rounded-xl transition-all hover:border-accent"
+                  className="inline-flex items-center justify-center gap-2 text-base font-medium text-white bg-accent px-6 py-3 rounded-xl transition-all hover:bg-accent-hover"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
                 >
