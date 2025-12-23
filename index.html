@@ -3,10 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
-    <link href="/src/styles.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rory Eddleston | Front-end developer</title>
+
+    <!-- Prevent white flash before CSS loads -->
+    <style>
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background: #ffffff;
+        background-image: linear-gradient(to bottom right, #f0fdfa, #ccfbf1);
+      }
+
+      html.dark,
+      html.dark body {
+        background: #0f172a;
+        background-image: linear-gradient(to bottom right, #0f172a, #164e63);
+      }
+    </style>
+
+    <!-- Apply dark mode before React loads (only if you support theme toggle) -->
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme"); // "dark" | "light"
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const useDark = saved ? saved === "dark" : prefersDark;
+        if (useDark) document.documentElement.classList.add("dark");
+      })();
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
