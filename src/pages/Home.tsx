@@ -17,6 +17,8 @@ import {
   FaRocket,
   FaBriefcase,
   FaLaptopCode,
+  FaGithub,
+  FaArrowRight,
 } from "react-icons/fa";
 import "../index.css";
 
@@ -124,56 +126,66 @@ const timeline = [
   },
 ];
 
+const container = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.05 },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 14 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65, ease: "easeOut" },
+  },
+};
+
+const fadeOnly = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
+};
+
+const Dot = () => (
+  <span className="text-accent mx-2" aria-hidden="true">
+    •
+  </span>
+);
+
 const Home = () => {
-  const [text, setText] = useState("");
-  const fullText = "Welcome, I’m Rory";
+  const [isMobile, setIsMobile] = useState(false);
 
   // Detect mobile (<= 640px) so you can set mobileTop/mobileLeft per icon
-  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 640px)");
-    const onChange = (e: MediaQueryListEvent | MediaQueryList) =>
-      setIsMobile("matches" in e ? e.matches : (e as MediaQueryList).matches);
+    const onChange = (e) => setIsMobile("matches" in e ? e.matches : e.matches);
     onChange(mq);
-    if (mq.addEventListener)
-      mq.addEventListener("change", onChange as EventListener);
-    else
-      mq.addListener(
-        onChange as (this: MediaQueryList, ev: MediaQueryListEvent) => any
-      );
+    if (mq.addEventListener) mq.addEventListener("change", onChange);
+    else mq.addListener(onChange);
     return () => {
-      if (mq.removeEventListener)
-        mq.removeEventListener("change", onChange as EventListener);
-      else
-        mq.removeListener(
-          onChange as (this: MediaQueryList, ev: MediaQueryListEvent) => any
-        );
+      if (mq.removeEventListener) mq.removeEventListener("change", onChange);
+      else mq.removeListener(onChange);
     };
-  }, []);
-
-  useEffect(() => {
-    let i = 0;
-    const interval = setInterval(() => {
-      setText(fullText.slice(0, i + 1));
-      i++;
-      if (i === fullText.length) clearInterval(interval);
-    }, 90);
-    return () => clearInterval(interval);
   }, []);
 
   return (
     <>
       {/* HERO SECTION */}
       <section className="relative min-h-screen md:pl-20 bg-gradient-theme text-surface dark:text-theme transition-colors duration-300 flex items-center justify-center overflow-hidden">
+        {/* Floating icons */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
           {floatingIcons.map((item, idx) => {
-            const floatDistance = Math.floor(Math.random() * 40) + 20;
-            const duration = Math.random() * 4 + 4;
+            const floatDistance = Math.floor(Math.random() * 26) + 12;
+            const duration = Math.random() * 5 + 6;
 
             return (
               <motion.div
                 key={idx}
-                className="absolute text-accent opacity-30 text-4xl sm:text-5xl pointer-events-none select-none"
+                className="absolute text-accent opacity-20 text-4xl sm:text-5xl pointer-events-none select-none"
                 animate={{ y: [0, -floatDistance, 0] }}
                 transition={{ repeat: Infinity, duration, ease: "easeInOut" }}
                 style={{
@@ -188,65 +200,114 @@ const Home = () => {
           })}
         </div>
 
-        <div className="relative z-10 max-w-4xl px-6 w-full">
+        {/* Soft glow overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none z-[1] opacity-30"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 30% 20%, rgba(255,255,255,0.10), transparent 45%), radial-gradient(circle at 70% 70%, rgba(255,255,255,0.08), transparent 50%)",
+          }}
+        />
+
+        <div className="relative z-10 max-w-5xl px-6 w-full">
           <div className="flex flex-col md:flex-row items-center justify-center gap-10">
             {/* Image */}
-            <motion.img
-              src="/images/profile.webp"
-              alt="Rory"
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            <motion.div
+              initial={{ opacity: 0, y: 18, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{
-                delay: 1,
-                duration: 1,
-                ease: "easeOut",
-              }}
-              className="w-36 h-36 rounded-full border-[4px] border-accent text-accent shadow-lg object-cover"
-            />
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="shrink-0"
+            >
+              <img
+                src="/images/profile.webp"
+                alt="Rory"
+                className="w-36 h-36 rounded-full border-4 text-accent border-accent shadow-lg object-cover"
+              />
+            </motion.div>
 
             {/* Text */}
-            <div className="text-center md:text-left max-w-lg">
-              <motion.h1
-                className="text-4xl sm:text-5xl md:text-6xl font-bold text-heading mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                {text}
-                {text !== fullText && (
-                  <span className="blinking-cursor">|</span>
-                )}
-              </motion.h1>
-
+            <motion.div
+              className="text-center md:text-left max-w-xl"
+              variants={container}
+              initial="hidden"
+              animate="show"
+            >
+              {/* Eyebrow with green dot */}
               <motion.p
-                className="text-subtext text-lg sm:text-xl"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.8 }}
+                variants={fadeOnly}
+                className="text-xs sm:text-sm uppercase tracking-[0.22em] text-subtext/80 mb-4"
               >
-                A front-end developer who thrives on solving real-world problems
-                with code. I love collaborating to build fast, perfomant
-                websites and apps.
+                <span>Front-End Engineer</span>
               </motion.p>
 
-              <motion.a
-                href="/projects"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.3, duration: 0.1, ease: "easeOut" }}
-                className="group inline-flex items-center gap-2 mt-6 text-lg font-medium text-accent hover-accent border border-accent px-6 py-2 rounded-xl transition-all"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              {/* Name (green accent) */}
+              <motion.h1
+                variants={fadeUp}
+                className="text-4xl sm:text-5xl md:text-6xl font-bold text-accent leading-[1.05] mb-10"
               >
-                View my work
-                <span
-                  aria-hidden="true"
-                  className="inline-block transition-transform duration-200 ease-out group-hover:translate-x-1"
+                Rory Eddleston
+              </motion.h1>
+
+              {/* Value line */}
+              <motion.p
+                variants={fadeUp}
+                className="text-subtext text-lg sm:text-xl leading-relaxed mb-10"
+              >
+                I build clean, performant interfaces with thoughtful motion and
+                strong attention to UX and data.
+              </motion.p>
+
+              {/* Tech hint with green dots */}
+              <motion.p
+                variants={fadeOnly}
+                className="mt-5 text-md text-subtext/80"
+              >
+                <span>Next.js</span>
+                <Dot />
+                <span>React</span>
+                <Dot />
+                <span>TypeScript</span>
+                <Dot />
+                <span>Tailwind</span>
+                <Dot />
+                <span>REST API's</span>
+                <Dot />
+                <span>Framer Motion</span>
+              </motion.p>
+
+              {/* CTAs */}
+              <motion.div
+                variants={fadeUp}
+                className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-3 mt-8"
+              >
+                <motion.a
+                  href="/projects"
+                  className="group inline-flex items-center justify-center gap-2 text-base font-medium text-white bg-accent px-6 py-3 rounded-xl transition-all hover:bg-accent-hover"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  →
-                </span>
-              </motion.a>
-            </div>
+                  View projects
+                  <span
+                    aria-hidden="true"
+                    className="inline-flex transition-transform duration-200 ease-out group-hover:translate-x-1"
+                  >
+                    <FaArrowRight />
+                  </span>
+                </motion.a>
+
+                <motion.a
+                  href="https://github.com/roryeddleston"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 text-base font-medium text-accent border border-accent/60 px-6 py-3 rounded-xl transition-all hover:border-accent"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <FaGithub className="text-lg" />
+                  GitHub
+                </motion.a>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -272,8 +333,8 @@ const Home = () => {
           >
             I’m a versatile front-end developer with over 3 years industry
             experience. I've worked on many apps and websites, always with a
-            focus on attention to detail. I’m always looking to learn new skills
-            and improve my craft.
+            focus on attention to detail. I’m constantly looking to learn new
+            skills and improve my craft.
           </motion.p>
         </div>
       </section>
