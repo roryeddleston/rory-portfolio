@@ -1,0 +1,11 @@
+**/*.js
+**/*.cjs
+**/*.mjs
+**/*.ts
+**/*.tsx
+**/*.jsx
+**/*.json
+**/*.md
+node_modules
+dist
+build
