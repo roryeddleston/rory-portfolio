@@ -7,12 +7,11 @@ const projects = [
     title: "Pokémon Alternative Investment Fund",
     inDevelopment: true,
     description:
-      "Premium, animated marketing site for a dummy Pokémon alternative investment fund focused on PSA-graded cards. Features a responsive slab-fan hero, shokunin-inspired best practices, and Sanity-driven content.",
+      "Pokémon alternative investment fund website focused on PSA-graded cards with live data from multiple API's. Features a responsive slab-fan hero, shokunin-inspired best practices. Sanity-driven content and a tokenized design system.",
     desktopImg: "/images/pokemon-desktop.webp",
     mobileImg: "/images/pokemon-mobile.webp",
     stack: "Next.js 15, React, Tailwind CSS, Framer Motion, REST API, Sanity.",
-    challenges:
-      "High-fidelity slab fan without blur, accessible motion (reduced-motion safe), content modeling in Sanity, and a tokenized design system.",
+    challenges: "Integrating multiple API's and content modeling in Sanity, ",
   },
   {
     title: "LifeOS productivity app",
@@ -56,7 +55,7 @@ const projects = [
   {
     title: "Revive support hub",
     description:
-      "Uniquely styled website for a local charity, aimed at parents of children with additional needs. Built with future updates in mind. The website is fully responsive and includes a donation page.",
+      "Uniquely styled website for a local charity, aimed at parents of children with additional needs. Built quickly with future updates in mind. The website is fully responsive and includes a donation page.",
     link: "https://www.revivesupporthub.com/",
     github: "https://github.com/roryeddleston/revive",
     desktopImg: "/images/revive-desktop.webp",

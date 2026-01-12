@@ -107,14 +107,14 @@ const timeline = [
     year: "2022–2024",
     title: "Front-end developer (Mid-level)",
     description:
-      "Took ownership of larger projects, including leading development of a React Native app. Improved performance by ~25%, reduced development time by ~30% through reusable components, and resolved long‑standing legacy issues.",
+      "Took ownership of larger projects, including leading the development of a React Native app. Improved performance by ~25%, reduced development time by ~30% through reusable components, and resolved long‑standing legacy issues.",
     icon: <FaBriefcase />,
   },
   {
     year: "2025",
     title: "Freelance, focus & rebuild",
     description:
-      "Designed and built a website for a charity supporting parents of children with autism and worked as a freelancer. Rebuilt my portfolio, developed LifeOS, and deepened my knowledge of TypeScript and modern Next.js workflows.",
+      "Designed and built a website for a charity supporting parents of children with autism and worked as a freelancer. Rebuilt my portfolio, developed projects, Freelance work and deepened my knowledge of TypeScript, modern Next.js workflows and best practices.",
     icon: <FaLaptopCode />,
   },
   {
@@ -216,7 +216,7 @@ const Home = () => {
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
           {floatingIcons.map((item, idx) => {
             const floatDistance = Math.floor(Math.random() * 26) + 12;
-            const duration = Math.random() * 5 + 6;
+            const duration = Math.random() * 5 + 3;
 
             return (
               <motion.div
