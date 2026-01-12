@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import {
   SiReact,
@@ -88,7 +88,7 @@ const floatingIcons = [
   },
   {
     icon: <SiAdobephotoshop />,
-    top: "20%",
+    top: "14%",
     left: "40%",
     mobileTop: "8%",
     mobileLeft: "35%",
@@ -97,40 +97,38 @@ const floatingIcons = [
 
 const timeline = [
   {
-    year: "2019",
-    title: "Started learning to code",
+    year: "2021-2022",
+    title: "Junior front-end developer",
     description:
-      "Taught myself HTML, CSS and JavaScript while working full-time as a data analyst.",
+      "Joined a creative agency building responsive and accessible React applications. Delivered pixel‑perfect UI across multiple client projects, working closely with designers and content teams.",
     icon: <FaCode />,
   },
   {
-    year: "2021",
-    title: "Junior developer",
+    year: "2022–2024",
+    title: "Front-end developer (Mid-level)",
     description:
-      "Became a junior developer at a creative agency, working on a wide variety of projects.",
-    icon: <FaRocket />,
-  },
-  {
-    year: "2022",
-    title: "Mid level developer",
-    description:
-      "Promoted to mid-level developer, taking on more complex projects and responsibilities.",
+      "Took ownership of larger projects, including leading development of a React Native app. Improved performance by ~25%, reduced development time by ~30% through reusable components, and resolved long‑standing legacy issues.",
     icon: <FaBriefcase />,
   },
   {
     year: "2025",
-    title: "Left to travel, focus on fundamentals and the latest tools",
+    title: "Freelance, focus & rebuild",
     description:
-      "Built a website for a local charity, worked on personal projects and taught myself TypeScript.",
+      "Designed and built a website for a charity supporting parents of children with autism and worked as a freelancer. Rebuilt my portfolio, developed LifeOS, and deepened my knowledge of TypeScript and modern Next.js workflows.",
     icon: <FaLaptopCode />,
+  },
+  {
+    year: "Present",
+    title: "Building & looking ahead",
+    description:
+      "Currently building polished, performant front-end applications with React and Next.js, and looking for a role where I can continue growing within a collaborative team.",
+    icon: <FaRocket />,
   },
 ];
 
 const container: Variants = {
   hidden: {},
-  show: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.05 },
-  },
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } },
 };
 
 const fadeUp: Variants = {
@@ -144,10 +142,7 @@ const fadeUp: Variants = {
 
 const fadeOnly: Variants = {
   hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { duration: 0.7, ease: "easeOut" },
-  },
+  show: { opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
 };
 
 const Dot = () => (
@@ -159,11 +154,13 @@ const Dot = () => (
 const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detect mobile (<= 640px) so you can set mobileTop/mobileLeft per icon
+  // Timeline line sizing based on actual first/last icon centers
+  const timelineWrapRef = useRef<HTMLDivElement | null>(null);
+  const [lineTop, setLineTop] = useState(0);
+  const [lineHeight, setLineHeight] = useState(0);
+
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 640px)");
-
-    // initial value
     setIsMobile(mq.matches);
 
     const onChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
@@ -174,6 +171,40 @@ const Home = () => {
     return () => {
       if (mq.removeEventListener) mq.removeEventListener("change", onChange);
       else mq.removeListener(onChange);
+    };
+  }, []);
+
+  useLayoutEffect(() => {
+    const wrap = timelineWrapRef.current;
+    if (!wrap) return;
+
+    const updateLine = () => {
+      const icons = wrap.querySelectorAll<HTMLElement>("[data-timeline-icon]");
+      if (!icons.length) return;
+
+      const first = icons[0];
+      const last = icons[icons.length - 1];
+
+      const wrapRect = wrap.getBoundingClientRect();
+      const firstRect = first.getBoundingClientRect();
+      const lastRect = last.getBoundingClientRect();
+
+      const firstCenter = firstRect.top - wrapRect.top + firstRect.height / 2;
+      const lastCenter = lastRect.top - wrapRect.top + lastRect.height / 2;
+
+      setLineTop(firstCenter);
+      setLineHeight(Math.max(0, lastCenter - firstCenter));
+    };
+
+    updateLine();
+
+    const ro = new ResizeObserver(() => updateLine());
+    ro.observe(wrap);
+    window.addEventListener("resize", updateLine);
+
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", updateLine);
     };
   }, []);
 
@@ -205,12 +236,12 @@ const Home = () => {
           })}
         </div>
 
-        {/* Soft glow overlay */}
+        {/* Soft glow overlay (CSS vars) */}
         <div
           className="absolute inset-0 pointer-events-none z-[1] opacity-30"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 30% 20%, rgba(255,255,255,0.10), transparent 45%), radial-gradient(circle at 70% 70%, rgba(255,255,255,0.08), transparent 50%)",
+              "radial-gradient(circle at 30% 20%, rgb(from var(--accent) r g b / 0.14), transparent 45%), radial-gradient(circle at 70% 70%, rgb(from var(--accent) r g b / 0.10), transparent 50%)",
           }}
         />
 
@@ -237,7 +268,6 @@ const Home = () => {
               initial="hidden"
               animate="show"
             >
-              {/* Eyebrow with green dot */}
               <motion.p
                 variants={fadeOnly}
                 className="text-xs sm:text-sm uppercase tracking-[0.22em] text-subtext/80 mb-4"
@@ -245,7 +275,6 @@ const Home = () => {
                 <span>Front-End Engineer</span>
               </motion.p>
 
-              {/* Name (green accent) */}
               <motion.h1
                 variants={fadeUp}
                 className="text-4xl sm:text-5xl md:text-6xl font-bold text-accent leading-[1.05] mb-10"
@@ -253,7 +282,6 @@ const Home = () => {
                 Rory Eddleston
               </motion.h1>
 
-              {/* Value line */}
               <motion.p
                 variants={fadeUp}
                 className="text-subtext text-lg sm:text-xl leading-relaxed mb-10"
@@ -262,7 +290,6 @@ const Home = () => {
                 strong attention to UX and data.
               </motion.p>
 
-              {/* Tech hint with green dots */}
               <motion.p
                 variants={fadeOnly}
                 className="mt-5 text-md text-subtext/80"
@@ -275,17 +302,16 @@ const Home = () => {
                 <Dot />
                 <span>Tailwind</span>
                 <Dot />
-                <span>REST API's</span>
+                <span>REST API&apos;s</span>
                 <Dot />
                 <span>Framer Motion</span>
               </motion.p>
 
-              {/* CTAs (reversed styles) */}
+              {/* CTAs */}
               <motion.div
                 variants={fadeUp}
                 className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-3 mt-8"
               >
-                {/* View projects -> outline */}
                 <motion.a
                   href="/projects"
                   className="group inline-flex items-center justify-center gap-2 text-base font-medium text-accent border border-accent/60 px-6 py-3 rounded-xl transition-all hover:border-accent"
@@ -301,7 +327,6 @@ const Home = () => {
                   </span>
                 </motion.a>
 
-                {/* GitHub -> filled */}
                 <motion.a
                   href="https://github.com/roryeddleston"
                   target="_blank"
@@ -347,7 +372,7 @@ const Home = () => {
       </section>
 
       {/* JOURNEY TIMELINE */}
-      <section className="bg-bg text-surface dark:text-theme px-6 py-20 transition-colors duration-300 pb-30">
+      <section className="bg-bg text-surface dark:text-theme px-4 sm:px-6 py-20 transition-colors duration-300 pb-30">
         <div className="max-w-4xl mx-auto">
           <motion.h2
             className="text-3xl sm:text-4xl font-bold text-heading mb-12 text-center"
@@ -359,28 +384,48 @@ const Home = () => {
             My Journey
           </motion.h2>
 
-          <div className="relative border-l border-border pl-6 space-y-16 mt-15 ml-15 mr-15">
-            {timeline.map((item, idx) => (
-              <motion.div
-                key={idx}
-                className="relative"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: idx * 0.2, duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <div className="absolute -left-13 top-0 w-14 h-14 bg-surface border border-border rounded-full flex items-center justify-center text-accent shadow text-xl">
-                  {item.icon}
-                </div>
+          <div className="relative mt-12 mx-2 sm:mx-15" ref={timelineWrapRef}>
+            {/* Line drawn between the first and last icon centers */}
+            <div
+              className="absolute w-px"
+              style={{
+                left: 28, // center of 56px icon column
+                top: lineTop,
+                height: lineHeight,
+                // "white" feel in dark mode, still visible in light mode (token-based)
+                backgroundColor: "rgb(from var(--text) r g b / 0.85)",
+              }}
+              aria-hidden="true"
+            />
 
-                <div className="ml-8">
-                  <h3 className="text-lg font-semibold text-heading">
-                    {item.year} — {item.title}
-                  </h3>
-                  <p className="text-subtext mt-1">{item.description}</p>
-                </div>
-              </motion.div>
-            ))}
+            <div className="space-y-16">
+              {timeline.map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.2, duration: 0.5 }}
+                  viewport={{ once: true }}
+                  className="grid grid-cols-[56px_1fr] gap-6 items-start"
+                >
+                  <div className="relative">
+                    <div
+                      data-timeline-icon
+                      className="w-14 h-14 bg-surface border border-border rounded-full flex items-center justify-center text-accent shadow text-xl"
+                    >
+                      {item.icon}
+                    </div>
+                  </div>
+
+                  <div className="pt-1">
+                    <h3 className="text-lg font-semibold text-heading">
+                      {item.year} — {item.title}
+                    </h3>
+                    <p className="text-subtext mt-1">{item.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
