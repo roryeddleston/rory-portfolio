@@ -4,16 +4,6 @@ import { useState } from "react";
 
 const projects = [
   {
-    title: "Pokémon Alternative Investment Fund",
-    inDevelopment: true,
-    description:
-      "Pokémon alternative investment fund website focused on PSA-graded cards with live data from multiple API's. Features a responsive slab-fan hero, shokunin-inspired best practices. Sanity-driven content and a tokenized design system.",
-    desktopImg: "/images/pokemon-desktop.webp",
-    mobileImg: "/images/pokemon-mobile.webp",
-    stack: "Next.js 15, React, Tailwind CSS, Framer Motion, REST API, Sanity.",
-    challenges: "Integrating multiple API's and content modeling in Sanity, ",
-  },
-  {
     title: "LifeOS productivity app",
     description:
       "A personal productivity dashboard with habits, tasks, and goal tracking. Fully authenticated via Clerk with real-time UI updates, drag-and-drop functionality, and an animated modern design.",
@@ -22,13 +12,23 @@ const projects = [
     desktopImg: "/images/lifeos-desktop.webp",
     mobileImg: "/images/lifeos-mobile.webp",
     stack:
-      "Next.js 15, React, Clerk, PostgreSQL, Prisma, Tailwind CSS, Framer Motion.",
+      "Next.js, React, Clerk, PostgreSQL, Prisma, Tailwind CSS, Framer Motion.",
     challenges:
       "Refactoring to support user-specific data using Clerk and Prisma was a major task. Optimistic UI updates with drag-and-drop interactions using @dnd-kit posed challenges around state management and syncing with the database. Designing an intuitive dashboard required extensive iteration and layout restructuring.",
     demo: {
       email: "lifeos-test@outlook.com",
       password: "j(3t~I:'`1K8",
     },
+  },
+  {
+    title: "Pokémon Alternative Investment Fund",
+    inDevelopment: true,
+    description:
+      "Pokémon alternative investment fund website focused on PSA-graded cards with live data from multiple API's. Features a responsive slab-fan hero, shokunin-inspired best practices. Sanity-driven content and a tokenized design system.",
+    desktopImg: "/images/pokemon-desktop.webp",
+    mobileImg: "/images/pokemon-mobile.webp",
+    stack: "Next.js 15, React, Tailwind CSS, Framer Motion, REST API, Sanity.",
+    challenges: "Integrating multiple API's and content modeling in Sanity, ",
   },
   {
     title: "CoDriver mobile app",
