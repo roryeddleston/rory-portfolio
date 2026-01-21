@@ -88,7 +88,7 @@ const floatingIcons = [
   },
   {
     icon: <SiAdobephotoshop />,
-    top: "14%",
+    top: "12%",
     left: "40%",
     mobileTop: "8%",
     mobileLeft: "35%",
@@ -302,7 +302,7 @@ const Home = () => {
                 <Dot />
                 <span>Tailwind</span>
                 <Dot />
-                <span>REST API&apos;s</span>
+                <span>REST APIs</span>
                 <Dot />
                 <span>Framer Motion</span>
               </motion.p>
