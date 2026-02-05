@@ -37,30 +37,68 @@ const Navbar = () => {
               }`}
             >
               {link.icon}
-              <span className="absolute left-16 top-1/2 -translate-y-1/2 bg-bg text-text text-sm px-2 py-1 rounded-md shadow opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
+              <span
+                className="
+                  absolute left-16 top-1/2 -translate-y-1/2
+                  bg-bg text-text text-sm px-2 py-1 rounded-md shadow
+                  opacity-0
+                  group-hover:opacity-100
+                  group-focus-visible:opacity-100
+                  transition-opacity
+                  whitespace-nowrap z-10
+                "
+              >
                 {link.label}
               </span>
             </Link>
           ))}
+
+          {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/rory-eddleston-5a5001a1/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.currentTarget.blur()}
+            aria-label="LinkedIn profile (opens in a new tab)"
             className="group relative text-xl text-subtext hover:text-accent transition-colors"
           >
-            <FiLinkedin />
-            <span className="absolute left-16 top-1/2 -translate-y-1/2 bg-bg text-text text-sm px-2 py-1 rounded-md shadow opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
+            <FiLinkedin aria-hidden="true" />
+            <span
+              className="
+                absolute left-16 top-1/2 -translate-y-1/2
+                bg-bg text-text text-sm px-2 py-1 rounded-md shadow
+                opacity-0
+                group-hover:opacity-100
+                group-focus-visible:opacity-100
+                transition-opacity
+                whitespace-nowrap z-10
+              "
+            >
               LinkedIn
             </span>
           </a>
+
+          {/* CV */}
           <a
             href="/Rory Eddleston CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.currentTarget.blur()}
+            aria-label="View CV (opens PDF in a new tab)"
             className="group relative text-xl text-subtext hover:text-accent transition-colors"
           >
-            <FiFileText />
-            <span className="absolute left-16 top-1/2 -translate-y-1/2 bg-bg text-text text-sm px-2 py-1 rounded-md shadow opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
+            <FiFileText aria-hidden="true" />
+            <span
+              className="
+                absolute left-16 top-1/2 -translate-y-1/2
+                bg-bg text-text text-sm px-2 py-1 rounded-md shadow
+                opacity-0
+                group-hover:opacity-100
+                group-focus-visible:opacity-100
+                transition-opacity
+                whitespace-nowrap z-10
+              "
+            >
               View CV
             </span>
           </a>
@@ -95,6 +133,7 @@ const Navbar = () => {
         </button>
       </div>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -125,6 +164,7 @@ const Navbar = () => {
             >
               LinkedIn
             </a>
+
             <a
               href="/cv.pdf"
               target="_blank"
