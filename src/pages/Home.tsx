@@ -331,7 +331,7 @@ const Home = () => {
                   href="https://github.com/roryeddleston"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 text-base font-medium text-white bg-accent px-6 py-3 rounded-xl transition-all hover:bg-accent-hover"
+                  className="inline-flex items-center justify-center gap-2 text-theme font-medium bg-accent px-6 py-3 rounded-xl transition-all hover:bg-accent-hover"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
                 >
