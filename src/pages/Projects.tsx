@@ -25,7 +25,7 @@ const projects: Project[] = [
     featured: true,
     description:
       "A full-stack Pokémon card portfolio tracker built with Next.js App Router. Search cards by name or number to add to your portfolio, track real market prices and view overall profit and loss.",
-    link: "https://pokemon-dashboard-one.vercel.app/",
+    link: "https://pokevault.roryeddleston.co.uk/",
     github: "https://github.com/roryeddleston/pokemon-dashboard",
     desktopImg: "/images/pokemon-dashboard-desktop.webp",
     mobileImg: "/images/pokemon-dashboard-mobile.webp",
@@ -39,7 +39,7 @@ const projects: Project[] = [
     featured: true,
     description:
       "A personal productivity dashboard with habits, tasks, and goal tracking. Fully authenticated via Clerk with real-time UI updates, drag-and-drop functionality, and an animated modern design.",
-    link: "https://lifeos-beige.vercel.app/",
+    link: "https://lifeos.roryeddleston.co.uk",
     github: "https://github.com/roryeddleston/lifeos",
     desktopImg: "/images/lifeos-desktop.webp",
     mobileImg: "/images/lifeos-mobile.webp",
