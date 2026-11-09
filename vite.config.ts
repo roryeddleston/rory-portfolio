@@ -1,19 +1,19 @@
 // vite.config.ts
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import tailwindcss from '@tailwindcss/vite';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 export default defineConfig({
-  base: '/',
+  base: "/",
   plugins: [
     react(),
     tailwindcss(),
     viteStaticCopy({
       targets: [
         {
-          src: 'public/.htaccess',
-          dest: '.', // copy to root of /dist
+          src: "public/.htaccess",
+          dest: ".", // copy to root of /dist
         },
       ],
     }),

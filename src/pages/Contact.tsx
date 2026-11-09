@@ -41,7 +41,7 @@ const Contact = () => {
         "service_8ar2u3r",
         "template_ovjo0gj",
         form,
-        "dxNZAaHexZxryb3ZM"
+        "dxNZAaHexZxryb3ZM",
       );
 
       toast.success("Thanks! Your message was sent. 📬");
