@@ -142,7 +142,7 @@ const CopyField = ({ label, value }: CopyFieldProps) => {
       <button
         type="button"
         onClick={handleCopy}
-        className="px-2 py-1 text-sm bg-accent text-white rounded hover:bg-accent-hover"
+        className="px-2 py-1 text-sm text-white rounded"
       >
         {copied ? "Copied!" : "Copy"}
       </button>
@@ -157,7 +157,7 @@ const ProjectLinks = ({ project }: { project: Project }) => (
         href={project.link}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-accent font-medium hover-accent"
+        className="text-accent font-medium hover:text-accent-hover"
       >
         Visit website
       </a>
@@ -168,7 +168,7 @@ const ProjectLinks = ({ project }: { project: Project }) => (
         href={project.github}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-accent text-xl hover-accent"
+        className="text-accent text-xl hover:text-accent-hover"
         aria-label={`View ${project.title} on GitHub`}
       >
         <FaGithub />
@@ -189,7 +189,7 @@ const SupportingProjectCard = ({ project }: { project: Project }) => {
       transition={{ duration: 0.55, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
       whileHover={{ y: -6 }}
-      className="group relative overflow-hidden rounded-2xl border border-white/5 p-5 transition-all duration-300 hover:border-accent/20 hover:shadow-[0_20px_60px_rgba(0,0,0,0.18)]"
+      className="group relative overflow-hidden rounded-2xl border border-white/5 p-5 transition-all duration-300 hover:shadow-[0_20px_60px_rgba(0,0,0,0.18)]"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.07),transparent_35%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
@@ -211,7 +211,7 @@ const SupportingProjectCard = ({ project }: { project: Project }) => {
           {project.title}
 
           {project.inDevelopment && (
-            <span className="inline-flex items-center rounded-full border border-accent/25 bg-accent/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-accent">
+            <span className="inline-flex items-center rounded-full border border-accent px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-accent">
               In development
             </span>
           )}
@@ -231,7 +231,7 @@ const Projects = () => {
   const supportingProjects = projects.filter((project) => !project.featured);
 
   return (
-    <section className="min-h-screen px-4 py-16 bg-bg text-text transition-colors duration-300">
+    <section className="min-h-screen px-4 py-16 text-text transition-colors duration-300">
       <motion.h2
         className="text-5xl font-bold text-center text-heading"
         initial={{ opacity: 0, y: 14 }}
@@ -315,7 +315,7 @@ const Projects = () => {
 
                 {project.inDevelopment && (
                   <span
-                    className="inline-flex items-center rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-accent shadow-sm"
+                    className="inline-flex items-center rounded-full border border-accent px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-accent shadow-sm"
                     aria-label="In development"
                     title="In development"
                   >

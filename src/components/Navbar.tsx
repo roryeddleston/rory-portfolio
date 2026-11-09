@@ -26,21 +26,21 @@ const Navbar = () => {
   return (
     <>
       {/* Sidebar for desktop */}
-      <aside className="hidden md:flex fixed top-0 left-0 h-full w-20 bg-surface border-r border-border flex-col items-center pt-6 z-50 transition-colors space-y-6">
+      <aside className="hidden md:flex fixed top-0 left-0 h-full w-20 bg-surface border-r border-text flex-col items-center pt-6 z-50 transition-colors space-y-6">
         <nav className="flex flex-col items-center space-y-8 mt-6">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className={`group relative text-xl text-subtext hover:text-accent transition-colors ${
-                pathname === link.to ? "text-accent" : ""
+              className={`group relative text-xl hover:text-accent transition-colors ${
+                pathname === link.to ? "text-accent" : "text-subtext"
               }`}
             >
               {link.icon}
               <span
                 className="
                   absolute left-16 top-1/2 -translate-y-1/2
-                  bg-bg text-text text-sm px-2 py-1 rounded-md shadow
+                  text-text text-sm px-2 py-1 rounded-md shadow
                   opacity-0
                   group-hover:opacity-100
                   group-focus-visible:opacity-100
@@ -66,7 +66,7 @@ const Navbar = () => {
             <span
               className="
                 absolute left-16 top-1/2 -translate-y-1/2
-                bg-bg text-text text-sm px-2 py-1 rounded-md shadow
+                text-text text-sm px-2 py-1 rounded-md shadow
                 opacity-0
                 group-hover:opacity-100
                 group-focus-visible:opacity-100
@@ -91,7 +91,7 @@ const Navbar = () => {
             <span
               className="
                 absolute left-16 top-1/2 -translate-y-1/2
-                bg-bg text-text text-sm px-2 py-1 rounded-md shadow
+                text-text text-sm px-2 py-1 rounded-md shadow
                 opacity-0
                 group-hover:opacity-100
                 group-focus-visible:opacity-100

@@ -55,7 +55,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen w-full px-6 pt-28 pb-16 bg-bg text-text flex justify-center lg:pl-20 lg:pt-16">
+    <section className="min-h-screen w-full px-6 pt-28 pb-16 text-text flex justify-center lg:pl-20 lg:pt-16">
       <motion.div
         initial={{ opacity: 0, scale: 0.95, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -94,11 +94,9 @@ const Contact = () => {
               type="text"
               {...register("name", { required: "Name is required" })}
               placeholder="Your full name"
-              className="w-full px-4 py-3 rounded-xl bg-bg border border-border text-text placeholder:text-subtext focus:outline-none focus:ring-2 focus:ring-accent"
+              className="w-full px-4 py-3 rounded-xl border border-text text-text placeholder:text-subtext focus:outline-none focus:ring-2"
             />
-            {errors.name && (
-              <p className="text-sm text-error">{errors.name.message}</p>
-            )}
+            {errors.name && <p className="text-sm">{errors.name.message}</p>}
           </div>
 
           <div className="space-y-2">
@@ -113,11 +111,9 @@ const Contact = () => {
                 },
               })}
               placeholder="you@example.com"
-              className="w-full px-4 py-3 rounded-xl bg-bg border border-border text-text placeholder:text-subtext focus:outline-none focus:ring-2 focus:ring-accent"
+              className="w-full px-4 py-3 rounded-xl border border-text text-text placeholder:text-subtext focus:outline-none focus:ring-2"
             />
-            {errors.email && (
-              <p className="text-sm text-error">{errors.email.message}</p>
-            )}
+            {errors.email && <p className="text-sm">{errors.email.message}</p>}
           </div>
 
           <div className="space-y-2">
@@ -126,10 +122,10 @@ const Contact = () => {
               rows={6}
               {...register("message", { required: "Message is required" })}
               placeholder="Write your message here..."
-              className="w-full px-4 py-3 rounded-xl bg-bg border border-border text-text placeholder:text-subtext focus:outline-none focus:ring-2 focus:ring-accent resize-none"
+              className="w-full px-4 py-3 rounded-xl border border-text text-text placeholder:text-subtext focus:outline-none focus:ring-2 resize-none"
             />
             {errors.message && (
-              <p className="text-sm text-error">{errors.message.message}</p>
+              <p className="text-sm">{errors.message.message}</p>
             )}
           </div>
 
@@ -141,8 +137,8 @@ const Contact = () => {
               whileTap={{ scale: 0.98 }}
               className={`w-full py-3 px-6 rounded-xl font-semibold text-lg transition-all duration-300 border-2 ${
                 isSubmitting
-                  ? "border-border text-border cursor-not-allowed bg-transparent"
-                  : "border-accent text-accent hover:bg-accent hover:text-white focus:ring-2 focus:ring-accent-hover"
+                  ? "cursor-not-allowed bg-transparent"
+                  : "border-accent text-accent hover:text-white focus:ring-2 focus:ring-accent-hover"
               }`}
             >
               {isSubmitting ? "Sending..." : "Send Message"}

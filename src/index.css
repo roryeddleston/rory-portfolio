@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+/* Theme is toggled via a `.dark` class on <html> (see index.html / ThemeToggle). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Expose the CSS variables below as Tailwind colours (bg-accent, text-subtext, …).
+   `inline` keeps the var() references so the .dark overrides apply at runtime. */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-text: var(--text);
+  --color-heading: var(--heading);
+  --color-subtext: var(--subtext);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+}
+
 @layer base {
   :root {
     --bg: #ffffff;
@@ -73,40 +92,6 @@
   }
 }
 
-@layer utilities {
-  .bg-theme {
-    background-color: var(--bg);
-  }
-
-  .bg-gradient-theme {
-    background-image: var(--bg-gradient);
-  }
-
-  .text-theme {
-    color: var(--text);
-  }
-
-  .text-heading {
-    color: var(--heading);
-  }
-
-  .text-subtext {
-    color: var(--subtext);
-  }
-
-  .border-theme {
-    border-color: var(--border);
-  }
-
-  .text-accent {
-    color: var(--accent);
-  }
-
-  .hover-accent:hover {
-    color: var(--accent-hover);
-  }
-
-  .bg-surface {
-    background-color: var(--surface);
-  }
+@utility bg-gradient-theme {
+  background-image: var(--bg-gradient);
 }

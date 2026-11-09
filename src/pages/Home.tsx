@@ -211,7 +211,7 @@ const Home = () => {
   return (
     <>
       {/* HERO SECTION */}
-      <section className="relative min-h-screen md:pl-20 bg-gradient-theme text-surface dark:text-theme transition-colors duration-300 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen md:pl-20 bg-gradient-theme transition-colors duration-300 flex items-center justify-center overflow-hidden">
         {/* Floating icons */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
           {floatingIcons.map((item, idx) => {
@@ -270,7 +270,7 @@ const Home = () => {
             >
               <motion.p
                 variants={fadeOnly}
-                className="text-xs sm:text-sm uppercase tracking-[0.22em] text-subtext/80 mb-4"
+                className="text-xs sm:text-sm uppercase tracking-[0.22em] text-text mb-4"
               >
                 <span>Front-End Engineer</span>
               </motion.p>
@@ -290,10 +290,7 @@ const Home = () => {
                 strong attention to UX and data.
               </motion.p>
 
-              <motion.p
-                variants={fadeOnly}
-                className="mt-5 text-md text-subtext/80"
-              >
+              <motion.p variants={fadeOnly} className="mt-5 text-md text-text">
                 <span>Next.js</span>
                 <Dot />
                 <span>React</span>
@@ -314,7 +311,7 @@ const Home = () => {
               >
                 <motion.a
                   href="/projects"
-                  className="group inline-flex items-center justify-center gap-2 text-base font-medium text-accent border border-accent/60 px-6 py-3 rounded-xl transition-all hover:border-accent"
+                  className="group inline-flex items-center justify-center gap-2 text-base font-medium text-accent border border-accent px-6 py-3 rounded-xl transition-all"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -331,7 +328,7 @@ const Home = () => {
                   href="https://github.com/roryeddleston"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 text-theme font-medium bg-accent px-6 py-3 rounded-xl transition-all hover:bg-accent-hover"
+                  className="inline-flex items-center justify-center gap-2 text-text font-medium px-6 py-3 rounded-xl transition-all"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -345,7 +342,7 @@ const Home = () => {
       </section>
 
       {/* ABOUT ME SECTION */}
-      <section className="bg-surface text-surface dark:text-theme px-6 py-20 transition-colors duration-300">
+      <section className="bg-surface px-6 py-20 transition-colors duration-300">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <motion.h2
             className="text-3xl sm:text-4xl font-bold text-heading"
@@ -372,7 +369,7 @@ const Home = () => {
       </section>
 
       {/* JOURNEY TIMELINE */}
-      <section className="bg-bg text-surface dark:text-theme px-4 sm:px-6 py-20 transition-colors duration-300 pb-30">
+      <section className="px-4 sm:px-6 py-20 transition-colors duration-300 pb-30">
         <div className="max-w-4xl mx-auto">
           <motion.h2
             className="text-3xl sm:text-4xl font-bold text-heading mb-12 text-center"
@@ -411,7 +408,7 @@ const Home = () => {
                   <div className="relative">
                     <div
                       data-timeline-icon
-                      className="w-14 h-14 bg-surface border border-border rounded-full flex items-center justify-center text-accent shadow text-xl"
+                      className="w-14 h-14 bg-surface border border-accent rounded-full flex items-center justify-center text-accent shadow text-xl"
                     >
                       {item.icon}
                     </div>
